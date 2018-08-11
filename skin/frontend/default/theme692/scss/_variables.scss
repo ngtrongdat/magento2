@@ -1,0 +1,20 @@
+$grey: #EEE;
+$red: rgb(197, 18, 48);
+$bodytext: #222;
+$bodyfont: SFUFutura, 'Open Sans', Arial;
+
+@font-face {
+  font-family: 'SFUFuturaBook';
+  src: url("../fonts/SFUFutura/SFUFuturaBook.TTF")
+}
+@font-face {
+  font-family: 'SFUFutura';
+  src: url("../fonts/SFUFutura/SFUFuturaRegular.TTF");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'SFUFutura';
+  src: url("../fonts/SFUFutura/SFUFuturaBold.TTF");
+  font-weight: bold;
+}

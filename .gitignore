@@ -1,0 +1,5 @@
+/app/etc/local.xml
+node_modules/
+var/cache/
+var/session/
+var/report/

@@ -1,0 +1,99 @@
+.header{
+	font-family: SFUFuturaBook, 'Open Sans', Arial;
+	.header-border{
+		box-shadow: none;
+		background: $grey;
+		padding: 10px 10000px 10px;
+	}
+	.header-info{
+		padding-top: 0;
+	}
+	h1.logo{
+		width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+	}
+	.links{
+		a{
+	    cursor: pointer;
+	    text-decoration: none;
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    color: $bodytext!important;
+	    &:hover{
+				color: $red!important;
+			}
+		}
+		li{
+			position: relative;
+			&:nth-child(2), &:nth-child(5){
+				display: none;
+			}
+			&:not(:last-child){
+				&:after{
+					content: '';
+					width: 2px;
+					height: 100%;
+					display: block;
+					background: $bodytext;
+					position: absolute;
+					right: -10px;
+					top: 0;
+				}
+			}
+		}
+	}
+	.quick-access{
+		margin-bottom: 0;
+		padding-top: 3px;
+	}
+	.form-search {
+		.input-text{
+			color: $bodytext;
+			border-color: $red;
+			font-family: $bodyfont;
+			font-size: 16px;
+		}
+		button.button > span{
+			background-color: $red;
+			&:after{
+				background-color: #000!important;
+			}
+		}
+	}
+}
+
+.block-cart-header{
+  width: 25px;
+  height: 25px;
+  margin-right: 2px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  background: url(../images/icons/header-icons.svg) no-repeat;
+  background-position: 0 -50px !important;
+  margin-bottom: 0;
+  margin-top: 0;
+  &:hover{
+  	background-position: -25px -50px !important;
+  }
+  .summary{
+  	position: relative;
+  	color: $red;
+    font-size: 10px;
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 5px;
+    left: auto;
+    top: auto;
+  }
+  .cart-content{
+  	top: 36px;
+  }
+}
+
+@media only screen and (min-width: 768px){
+	.block-cart-header{
+
+	}
+}
