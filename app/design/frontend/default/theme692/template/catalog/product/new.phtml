@@ -31,8 +31,7 @@
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
 <?php
     $_collectionSize = $_products->getSize();
-
-        if($_collectionSize > 6)  {
+        if($_collectionSize > 8)  {
             $_sliderOnOf = "homeSider";
             $_itemwidth = "free";
             $_homeIndent = "homeIndent";
@@ -41,8 +40,8 @@
                     <a class="carousel-next fa fa-chevron-right" href="#"></a>
             </div>';
         } else {
-            $_sliderOnOf = "grid-clol-6";
-            $_itemwidth = "col-item6";
+            $_sliderOnOf = "grid-clol-4";
+            $_itemwidth = "col-item4";
             }
 ?>
 
@@ -55,7 +54,9 @@
             <?php if ($i++%$_columnCount==0): ?>
             <ul class="products-grid new_triger <?php echo $_sliderOnOf;?>">
             <?php endif ?>
+                <?php if ($i%2==1): ?>
                 <li class="item <?php echo $_itemwidth; ?> <?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>" itemscope itemtype="http://schema.org/product">
+                <?php endif ?>
                     <div class="wrapper-hover">
                         <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image noSwipe" itemprop="url"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(250, 383); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/></a>
                         <div class="product-shop">
@@ -73,19 +74,16 @@
                              </div>
                             <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                             <div class="actions noSwipe">
+
+                                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <a href="<?php echo $this->getAddToWishlistUrl($_product) ?>" class="link-wishlist button btn-wishlist"><?php echo $this->__('Wishlist') ?></a>
+                                <?php endif; ?>
+
                                 <?php if($_product->isSaleable()): ?>
-                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button noSwipe btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button noSwipe btn-buy" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                                 <?php else: ?>
                                     <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                                 <?php endif; ?>
-                                <ul class="add-to-links">
-                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                        <li><a href="<?php echo $this->getAddToWishlistUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
-                                    <?php endif; ?>
-                                    <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
-                                        <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
-                                    <?php endif; ?>
-                                </ul>
                             </div>
                         </div>
                         <?php $_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
@@ -95,7 +93,9 @@
                         </div>
                         <div class="clear"></div>
                     </div>
+                <?php if ($i%2==0): ?>
                 </li>
+                <?php endif; ?>
             <?php if ($i%$_columnCount==0 || $i==count($_products)): ?>
             </ul>
             <?php echo "$_slidControl"; ?>
@@ -104,4 +104,4 @@
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 </div>
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('video_block')->toHtml() ?>
+<!-- <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('video_block')->toHtml() ?> -->

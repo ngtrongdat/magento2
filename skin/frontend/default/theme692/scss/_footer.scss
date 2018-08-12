@@ -1,0 +1,30 @@
+.footer-container{
+	background: #1C1C1C;
+	.footer{
+		h4{
+			color: #fff;
+		}
+		ul li a{
+			color: #fff;
+			&:hover{
+				color: $red;
+			}
+		}
+		p{
+			color: #fff!important;
+		}
+	}
+}
+
+.footer-col.last{
+	border-color: #444;
+}
+
+.footer-shadow{
+	border-color: #444;
+	color: #fff;
+}
+
+.footer .block-subscribe button.button > span{
+	background: $red;
+}

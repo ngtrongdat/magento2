@@ -440,14 +440,14 @@ jQuery(document).ready(function() {
 					items: {
 						visible: {
 							min: 1,
-							max: 6
+							max: 4
 						},
 						width:220,
 						height: 'variable'
 					},
 					mousewheel: true,
 					swipe: {
-						onMouse: false,
+						onMouse: true,
 						onTouch: true
 					}
 				});
@@ -466,14 +466,14 @@ jQuery(document).ready(function() {
 					items: {
 						visible: {
 							min: 1,
-							max: 6
+							max: 4
 						},
 						width:220,
 						height: 'variable'
 					},
 					mousewheel: true,
 					swipe: {
-						onMouse: false,
+						onMouse: true,
 						onTouch: true
 					}
 				});

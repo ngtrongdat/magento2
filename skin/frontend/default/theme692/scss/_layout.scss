@@ -16,3 +16,17 @@ a{
 		color: $red;
 	}
 }
+
+.grid-clol-4 .col-item4 {
+  padding: 0 10px 10px;
+  width: 25%;
+  float: left;
+}
+
+#back-top span{
+	background-color: $red;
+}
+
+button.button > span:after, .but-link:after{
+	background-color: $red;
+}
