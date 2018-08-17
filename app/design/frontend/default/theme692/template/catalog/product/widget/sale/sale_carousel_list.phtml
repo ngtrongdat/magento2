@@ -75,6 +75,3 @@
             <script type="text/javascript">decorateList('widget-catalogsale-products-<?php echo $suffix; ?>', 'none-recursive')</script>
 </div>
 <?php endif; ?>
-<?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
-     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-home-category')->toHtml() ?>
-<?php endif;  ?>

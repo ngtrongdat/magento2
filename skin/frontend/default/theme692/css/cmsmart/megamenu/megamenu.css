@@ -76,7 +76,7 @@
   content: "\f107";
   display: inline-block; 
   font-size:15px; 
-  color: #73d5c9; 
+  color: #c51230; 
   border-radius: 20px;
   line-height: 20px;
   vertical-align: middle;
@@ -98,7 +98,7 @@
 }
 /*
 .grid-full > li > a:after {
-  background: #73d5c9;
+  background: #c51230;
   width: 0;
   left: 50%;
   height: 4px;
@@ -197,7 +197,7 @@
 }
 .grid-full .level1 .catagory-level1 {
     font-size: 17px;
-    color: #73d5c9;
+    color: #c51230;
     margin-bottom: 12px;
     font-weight: normal;
 }
@@ -252,7 +252,7 @@
 .grid-full .grid-full-home-link:hover a, 
 .ps-static .grid-full .level.over > a, 
 .grid-full .level.active > a {
-    color: #73d5c9; 
+    color: #c51230; 
 }
 .grid-full .level.over a:before,
 .grid-full .level.active a:before,
@@ -466,7 +466,7 @@
 .grid-full .catagory_children .catagory_children li.level2:hover > a,
 .grid-full .catagory_children .catagory_children li.level2.active > a {
     color: #fff;
-    background: #73d5c9;
+    background: #c51230;
     position: relative;
     text-decoration: none !important;
     width: 100%;
@@ -522,7 +522,7 @@
 }
 .grid-full .catagory_children.column1 li.level3 a:hover,
 .grid-full .catagory_children.column1 li.level3.active a {
-    background: #73d5c9;
+    background: #c51230;
     color: #fff;
 }
 .grid-full .level2 .static-block-left{
@@ -742,7 +742,7 @@
 }
 .fixed .grid-full .level span.cat-label {top: 2px;}
 .grid-full .level span.cat-label {
-    background: #73d5c9;
+    background: #c51230;
     border: medium none;
     color: #FFF;
     float: left;
@@ -786,7 +786,7 @@
 .grid-full li.level1 > a > span > .cat-label.pin-bottom:before,
 .grid-full li.level.over li.level2 > a > span > .cat-label.pin-bottom:before,
 .grid-full .catagory_children .level1 .catagory_children  .level2 .pin-bottom:before {
-    border-top-color: #73d5c9;
+    border-top-color: #c51230;
     }
 .grid-full li.level.over > a > span > .cat-label.pin-bottom:before,
 .grid-full li.level1.over > a > span > .cat-label.pin-bottom:before,
@@ -940,7 +940,7 @@
    color: #fff;
 }
 .menu-content-2 .col_1 .title-menu a:hover {
-  color: #73d5c9;
+  color: #c51230;
 }
 .menu-content-2 a.link-img {
   margin-bottom: 20px;

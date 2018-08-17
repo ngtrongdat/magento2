@@ -1086,7 +1086,7 @@
 .lof_camera_title1 {
 	font-size: 100px;
 	line-height: 100px;
-	color: #73d5c9;
+	color: #c51230;
 	position: relative;
 	margin-bottom: 39px;
 }
@@ -1098,7 +1098,7 @@
 	display: inline-block;
 	color: #fff;
 	padding: 0 30px; 
-	background:#73d5c9;
+	background:#c51230;
 }
 .camera_caption .camera-link:hover {background-color: #303c4b; }
 .camera_prev, 
@@ -1111,7 +1111,7 @@
 	background: none;
 	color: #fff;
 	left: auto;
-	background: #73d5c9;
+	background: #c51230;
 }
 .camera_prev {left: 1%;}
 .camera_next {right: 1%;}

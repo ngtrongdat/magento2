@@ -34,7 +34,7 @@
             <default_setup>
                 <connection>
                     <host>localhost</host>
-                    <username/>
+                    <username>root</username>
                     <password/>
                     <dbname>magento</dbname>
                     <model>mysql4</model>

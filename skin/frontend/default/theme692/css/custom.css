@@ -425,3 +425,30 @@ button.button > span:after, .but-link:after {
 
 .product-view .product-shop {
   width: 60%; }
+
+.categories-landing-page .categories {
+  display: flex;
+  flex-wrap: wrap; }
+  .categories-landing-page .categories .category .contents {
+    position: relative; }
+    .categories-landing-page .categories .category .contents .image img {
+      max-height: 260px;
+      object-fit: cover; }
+    .categories-landing-page .categories .category .contents .info {
+      padding: 20px 0; }
+      .categories-landing-page .categories .category .contents .info .name {
+        color: #171717;
+        font-size: 20px;
+        cursor: pointer;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        text-decoration: none; }
+      .categories-landing-page .categories .category .contents .info .number {
+        color: #666;
+        font-size: 18px;
+        font-weight: bold; }
+      .categories-landing-page .categories .category .contents .info p {
+        margin-bottom: 5px; }
+      .categories-landing-page .categories .category .contents .info .description {
+        color: #666;
+        font-size: 16px; }
