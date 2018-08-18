@@ -130,7 +130,7 @@
 	}
 	.grid-full > li.parent > a > span:after{
 		color: $red!important;
-		top: 30%;
+		top: 30%!important;
 	}
 	.grid-full > li > .level-top{
 		top: 42px;
@@ -258,4 +258,43 @@
 			line-height: 45px;
 		}
 	}
+}
+
+.grid-full {
+	&>li{
+		&>.level-top{
+			background: #fff!important;
+			border: 1px solid #DDD!important;
+		}
+	}
+	.catagory_children{
+		.level1{
+			margin-bottom: 30px;
+			&.active{
+				a{
+					color: $red!important;
+				}
+			}
+			&:hover{
+				a{
+					color: #000!important;
+				}
+			}
+		}
+		.catagory_children li.level2{
+			margin: 0!important;
+			&:hover{
+				a{
+					color: #fff!important;
+				}
+			}
+		  a{
+		  	color: #000!important;
+		  }
+		}
+	}
+}
+
+.nav .grid-full > li{
+	border: none;
 }

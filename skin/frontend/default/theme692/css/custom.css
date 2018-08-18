@@ -31,6 +31,11 @@ a {
   width: 25%;
   float: left; }
 
+.grid-clol-3 .col-item3 {
+  padding: 0 10px 10px;
+  width: 33.33333%;
+  float: left; }
+
 #back-top span {
   background-color: #c51230; }
 
@@ -137,7 +142,7 @@ button.button > span:after, .but-link:after {
       padding: 10px 15px; }
   .nav-container .grid-full > li.parent > a > span:after {
     color: #c51230 !important;
-    top: 30%; }
+    top: 30% !important; }
   .nav-container .grid-full > li > .level-top {
     top: 42px; }
 
@@ -231,6 +236,27 @@ button.button > span:after, .but-link:after {
     padding: 0 5px; }
     #menu-icon:before {
       line-height: 45px; } }
+
+.grid-full > li > .level-top {
+  background: #fff !important;
+  border: 1px solid #DDD !important; }
+
+.grid-full .catagory_children .level1 {
+  margin-bottom: 30px; }
+  .grid-full .catagory_children .level1.active a {
+    color: #c51230 !important; }
+  .grid-full .catagory_children .level1:hover a {
+    color: #000 !important; }
+
+.grid-full .catagory_children .catagory_children li.level2 {
+  margin: 0 !important; }
+  .grid-full .catagory_children .catagory_children li.level2:hover a {
+    color: #fff !important; }
+  .grid-full .catagory_children .catagory_children li.level2 a {
+    color: #000 !important; }
+
+.nav .grid-full > li {
+  border: none; }
 
 .footer-container {
   background: #1C1C1C; }
@@ -536,3 +562,17 @@ button.button > span:after, .but-link:after {
 
 .catalog-category-view .breadcrumbs {
   margin-bottom: 30px; }
+
+.products-grid.grid-clol-3 {
+  margin-left: -10px;
+  margin-right: -10px; }
+
+.products-list .list-right .regular-price {
+  float: none; }
+
+.product-name a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }

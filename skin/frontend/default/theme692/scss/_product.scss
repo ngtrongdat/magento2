@@ -155,3 +155,26 @@
     margin-bottom: 30px;
   }
 }
+
+.products-grid.grid-clol-3{
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.products-list{
+  .list-right{
+    .regular-price{
+      float: none;
+    }
+  }
+}
+
+.product-name{
+  a{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
