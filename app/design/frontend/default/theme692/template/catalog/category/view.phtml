@@ -31,6 +31,51 @@
  * @see Mage_Catalog_Block_Category_View
  */
 ?>
+
+<?php
+  $_curCategory = Mage::registry('current_category');    
+  $children  = $_curCategory->getChildren();
+  $skinUrl = $this->getSkinUrl();
+  $placeholderUrl = $skinUrl.'/images/placeholder.png';
+  if (!empty($children)){
+?>
+  <div class="container-fluid categories-landing-page nopadding">
+    <div class="categories">
+      <?php $index = 0;
+        foreach (explode(',', $children) as $child):
+          $_category = Mage::getModel('catalog/category')->load($child);
+          $category_name = $_category->getName();
+          $category_img = $_category->getImageUrl();
+          $category_url = $_category->getUrl();
+          $category_count = $_category->getProductCount();
+          if ($index === 0){ ?>
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-6 category">
+          <?php } else { ?>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 category">
+          <?php }
+            $index++;
+          ?>
+          <div class="contents">
+            <div class="image">
+              <a href="<?php echo $category_url;?>">
+                <img class="img-responsive" src="<?php echo ($category_img ? $category_img : $placeholderUrl); ?>" title="<?php echo $category_name; ?>" width="100%">
+              </a>
+            </div>
+            <div class="info">
+                <p>
+                  <a href="<?php echo $category_url;?>" class="name text-uppercase">
+                    <?php echo $category_name; ?>
+                  </a>
+                  <span class="number">(<?php echo $category_count; ?>)</span>
+                </p>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+<?php } ?>
+
 <?php
     $_helper    = $this->helper('catalog/output');
     $_category  = $this->getCurrentCategory();

@@ -1,6 +1,54 @@
-<?php
-  $tree = Mage::getModel('catalog/category_api')->tree(null);
-  echo '<pre>';
-  print_r($tree);
-  echo '</pre>';
+
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $categoryId = 5;?>
+<?php $category = Mage::getModel('catalog/category')->load($categoryId) ?>
+<?php $_categories = $category->getChildrenCategories() ?>
+<?php $_curCategory = Mage::registry('current_category');   
+  $_curCategoryId = $_curCategory->getId();
+  $_parentCategoryId = $_curCategory->getParentCategory()->getId();
 ?>
+
+<?php if (count($_categories) > 0): ?>
+  <div class="block categories hidden-xs">
+    <div class="block-contents">
+      <div id="cssmenu" class="two-level">
+        <ul>
+          <?php foreach($_categories as $_category): 
+            $_categoryId = $_category->getId();
+            $level1Selected = ($_categoryId == $_curCategoryId || $_categoryId == $_parentCategoryId) ? 'selected' : '';
+            ?>
+              <li class="has-sub <?php echo $level1Selected;?>">
+                  <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><?php echo $_category->getName() ?></a>
+                  <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+                  <?php if($_category->hasChildren()):?>
+                  <?php $_subcategories = $_category->getChildrenCategories() ?>
+                      <ul>
+                          <?php foreach($_subcategories as $_subcategory): 
+                            $_subcategoryId = $_subcategory->getId();
+                            $level2Selected = ($_subcategoryId == $_curCategoryId) ? 'selected' : '';
+                          ?>
+                              <li class="<?php echo $level2Selected;?>">
+                                  <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>"><?php echo $_subcategory->getName() ?></a>
+                                  <?php $_category2 = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                                  <?php if($_category2->hasChildren()):?>
+                                  <?php $_subcategories2 = $_category2->getChildrenCategories() ?>
+                                      <ul>
+                                          <?php foreach($_subcategories2 as $_subcategory2): ?>
+                                              <li>
+                                                  <a href="<?php echo $_helper->getCategoryUrl($_subcategory2) ?>"><?php echo $_subcategory2->getName() ?></a>
+                                              </li>
+                                          <?php endforeach; ?>
+                                      </ul>
+                                  <?php endif; ?>
+
+                              </li>
+                          <?php endforeach; ?>
+                      </ul>
+                  <?php endif; ?>
+              </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>

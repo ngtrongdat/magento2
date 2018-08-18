@@ -5,6 +5,7 @@
 .categories-landing-page .categories {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 40px;
   .category {
     .contents {
       position: relative;
@@ -37,5 +38,120 @@
         }
       }
     }
+  }
+}
+
+#cssmenu {
+  ul{
+    margin: 0;
+    padding: 0;
+    font-size: 0.95em;
+    list-style: none;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    li {
+      position: relative;
+      a{
+        display: block;
+        margin: 10px 0;
+        text-align: left;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 3px 0;
+        letter-spacing: 0.6px;
+        font-weight: bold;
+        font-family: 'SFUFuturaBook';
+        -webkit-transition: color .2s ease;
+        -moz-transition: color .2s ease;
+        -ms-transition: color .2s ease;
+        -o-transition: color .2s ease;
+        transition: color .2s ease;
+      }
+    }
+  }
+  &.two-level{
+    &>ul {
+      &>li {
+        &>a{
+          display: block;
+          margin: 10px 0;
+          text-align: left;
+          font-weight: bold;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 3px 0;
+          color: #171717;
+          font-size: 1.1em;
+          font-weight: bold;
+          &:hover{
+            color:$red;
+          }
+          &:after {
+            background-image: url(../images/icons/arrow.svg);
+          }
+        }
+        &.selected{
+          &>ul{
+            display: block;
+          }
+          &>a{
+            color: $red;
+          }
+        }
+        &.has-sub{
+          &>a{
+            &:after{
+              top: 2px;
+              right: 0;
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              content: '';
+              display: block;
+            }
+          }
+          &.selected{
+            &>a:after{
+              background-position: -25px -25px;
+            }
+          }
+        }
+        &>ul{
+          padding: 10px 0;
+          border-top: 1px solid $red;
+          border-bottom: 1px solid $red;
+          display: none;
+          &.selected{
+            margin: 20px 0;
+          }
+          &>li{
+            margin-left: 20px;
+            a {
+              text-transform: uppercase;
+              font-size: 1em;
+              color: #171717;
+              font-family: 'SFUFuturaBook';
+              color: #666;
+              &:hover{
+                color: #000;
+              }
+            }
+            &.selected{
+              a{
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+
+.catalog-category-view{
+  .breadcrumbs{
+    margin-bottom: 30px;
   }
 }
