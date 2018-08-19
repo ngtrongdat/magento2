@@ -82,7 +82,8 @@ button.button > span:after, .but-link:after {
     color: #222;
     border-color: #c51230;
     font-family: SFUFutura, "Open Sans", Arial;
-    font-size: 16px; }
+    font-size: 16px;
+    width: 300px; }
   .header .form-search button.button > span {
     background-color: #c51230; }
     .header .form-search button.button > span:after {
@@ -161,6 +162,11 @@ button.button > span:after, .but-link:after {
 .logo-mobile {
   padding: 10px 0;
   display: inline-block; }
+  .logo-mobile img {
+    max-height: 30px; }
+
+.logo img {
+  max-height: 80px; }
 
 .swipe {
   z-index: 99;
@@ -256,7 +262,7 @@ button.button > span:after, .but-link:after {
     color: #000 !important; }
 
 .nav .grid-full > li {
-  border: none; }
+  background: none; }
 
 .footer-container {
   background: #1C1C1C; }
@@ -354,7 +360,7 @@ button.button > span:after, .but-link:after {
   .happy-furniture-to-you .row .wrapper {
     width: inherit; }
 
-.slider .page-title {
+.page-title {
   color: #171717;
   font-size: 30px;
   line-height: 35px;
@@ -365,7 +371,7 @@ button.button > span:after, .but-link:after {
   text-transform: uppercase;
   font-family: SFUFuturaBook, Arial, Helvetica, sans-serif;
   border-bottom: 0; }
-  .slider .page-title:after {
+  .page-title:after {
     width: 45px;
     height: 3px;
     content: '';
@@ -448,6 +454,12 @@ button.button > span:after, .but-link:after {
     margin-bottom: 30px; }
   .homeIndent .carousel-prev, .homeIndent .carousel-next, .homeIndent .carousel-prev2, .homeIndent .carousel-next2 {
     display: none; } }
+
+.cms-about-us .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
 
 .product-view .product-shop {
   width: 60%; }
@@ -576,3 +588,6 @@ button.button > span:after, .but-link:after {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+
+.note-msg-empty-catalog {
+  min-height: 132px; }
