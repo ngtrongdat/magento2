@@ -262,7 +262,7 @@ button.button > span:after, .but-link:after {
     color: #000 !important; }
 
 .nav .grid-full > li {
-  background: none; }
+  background: none !important; }
 
 .footer-container {
   background: #1C1C1C; }

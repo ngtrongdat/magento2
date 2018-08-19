@@ -34,19 +34,12 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="footer">
-					<div class="footer-top">
+					<!-- <div class="footer-top">
 						<?php echo $this->getChildHtml('left.newsletter'); ?>
 						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('list_icon')->toHtml() ?>
-					</div>
+					</div> -->
 					  <p id="back-top"><a href="#top"><span><?php echo $this->__('Top') ?></span></a> </p>
 					  <div class="footer-cols-wrapper">
-						<div class="footer-col">			
-							<h4><?php echo $this->__('Information') ?></h4>
-							<div class="footer-col-content">
-								<?php echo $this->getChildHtml('cms_footer_links') ?>
-								<?php echo $this->getChildHtml('footer_links') ?>
-							</div>
-						</div>
 						<?php echo $this->getChildHtml('footer_list') ?>
 						<?php // echo $this->getChildHtml('blog') ?>
 						<div class="clear"></div>
