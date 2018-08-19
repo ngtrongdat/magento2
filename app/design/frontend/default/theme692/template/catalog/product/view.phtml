@@ -45,10 +45,10 @@
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
-        <div class="product-img-box">
+        <div class="product-img-box col-md-6">
             <?php echo $this->getChildHtml('media') ?>
         </div>
-        <div class="product-shop">
+        <div class="product-shop col-md-6">
             <div class="product-name">
                 <h1 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
@@ -58,7 +58,8 @@
                 <?php else: ?>
                     <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
                 <?php endif; ?>
-            <?php endif; ?> 
+            <?php endif; ?>
+            <?php echo $this->getChildHtml('alert_urls') ?>
             <?php echo $this->getChildHtml('product_type_data') ?>
             <?php echo $this->getTierPriceHtml() ?>
             <div class="clear"></div>
@@ -93,13 +94,12 @@
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
             <?php endif;?>
             <div class="row-product">
-                <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+<!--                --><?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
                 
-                <?php if ($this->canEmailToFriend()): ?>
-                    <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
-                <?php endif; ?>
+<!--                --><?php //if ($this->canEmailToFriend()): ?>
+<!--                    <p class="email-friend"><a href="--><?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?><!--">--><?php //echo $this->__('Email to a Friend') ?><!--</a></p>-->
+<!--                --><?php //endif; ?>
             </div>
-            <?php echo $this->getChildHtml('alert_urls') ?>
 
         </div>
         <div class="clearer"></div>
@@ -162,7 +162,7 @@
 
     <div class="product-collateral">
         <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-                <div class="box-collateral <?php echo "box-{$alias}"?>">
+                <div class="box-collateral <?php echo "box-{$alias}"?> col-md-6">
                     <?php if ($title = $this->getChildData($alias, 'title')):?>
                     <h2><?php echo $this->escapeHtml($title); ?></h2>
                     <?php endif;?>
@@ -173,14 +173,14 @@
         <?php echo $this->getChildHtml('product_additional_data') ?>
         <?php $attStuff= $_product->getData(); ?>
         <?php if( !empty( $attStuff['videoid'] ) ): ?>        
-            <div class="video-box box-collateral">
-                <h2><?php echo $this->__('Video') ?></h2>  
-                <div class="box-collateral-content">
-                    <div class="video">
-                         <iframe src="<?php echo $attStuff['videoid']; ?>?wmode=opaque" frameborder="0" allowfullscreen></iframe>     
-                   </div>
-                </div>
-              </div>
+<!--            <div class="video-box box-collateral">-->
+<!--                <h2>--><?php //echo $this->__('Video') ?><!--</h2>  -->
+<!--                <div class="box-collateral-content">-->
+<!--                    <div class="video">-->
+<!--                         <iframe src="--><?php //echo $attStuff['videoid']; ?><!--?wmode=opaque" frameborder="0" allowfullscreen></iframe>     -->
+<!--                   </div>-->
+<!--                </div>-->
+<!--              </div>-->
         <?php endif; ?>
     </div>
 </div>

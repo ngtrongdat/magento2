@@ -182,6 +182,7 @@ Product view
         <label>Catalog Product View (Any)</label>
         <!-- Mage_Catalog -->
         <reference name="root">
+            <!--<action method="setTemplate"><template>page/2columns-left.phtml</template></action>-->
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="head">
@@ -193,6 +194,7 @@ Product view
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
         </reference>
         <reference name="content">
+            <!--<remove name="product_type_data_extra" />-->
             <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
                 <!--
                 <action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/summary.phtml</template></action>
@@ -206,10 +208,11 @@ Product view
 
                 <action method="setTierPriceTemplate"><template>catalog/product/view/tierprices.phtml</template></action>
 
-                <block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml">
-                    <action method="setColumnCount"><columns>12</columns></action>
-                    <action method="setItemLimit"><type>upsell</type><limit>12</limit></action>
-                </block>
+                <!--<block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml">-->
+                    <!--<action method="setColumnCount"><columns>12</columns></action>-->
+                    <!--<action method="setItemLimit"><type>upsell</type><limit>12</limit></action>-->
+                <!--</block>-->
+                <remove name="product.info.upsell" />
 
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
@@ -272,7 +275,7 @@ Product view
             </block>
         </reference>
         <reference name="left">
-            <block type="catalog/product_list_related" name="catalog.product.related" before="-" template="catalog/product/list/related.phtml"/>
+            <!--<block type="catalog/product_list_related" name="catalog.product.related" before="-" template="catalog/product/list/related.phtml"/>-->
         </reference>
     </catalog_product_view>
 
