@@ -226,7 +226,7 @@
 	}
 	.homeIndent {
 		.carousel-prev, .carousel-next, .carousel-prev2, .carousel-next2{
-			display: none;
+			display: none!important;
 		}
 	}
 }
