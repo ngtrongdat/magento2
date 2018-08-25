@@ -825,7 +825,7 @@ All this is done for any sub-level being entered.
   top: 40%; }
 
 .magicmenu .nav-desktop .level0.dropdown > .level0 {
-  width: 20em; }
+  min-width: 20em; }
 
 .top-icon-menu, .swipe {
   background-color: #fff; }
@@ -849,6 +849,7 @@ All this is done for any sub-level being entered.
   max-height: 80px; }
 
 .swipe {
+  display: none;
   z-index: 99;
   font-family: SFUFutura, "Open Sans", Arial;
   color: #222;
@@ -924,6 +925,7 @@ All this is done for any sub-level being entered.
       line-height: 45px; } }
 
 body.ind .swipe {
+  display: block;
   width: 100%;
   z-index: 99999;
   top: 0;

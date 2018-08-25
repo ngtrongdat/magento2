@@ -184,7 +184,7 @@
   top: 40%;
 }
 .magicmenu .nav-desktop .level0.dropdown > .level0{
-	width: 20em;
+	min-width: 20em;
 }
 
 .top-icon-menu, .swipe{
@@ -217,6 +217,7 @@
 }
 
 .swipe{
+	display: none;
 	z-index: 99;
 	a {
 		color: $bodytext;
@@ -320,8 +321,8 @@
 }
 
 body.ind {
-
 	.swipe{
+		display: block;
 		width: 100%;
 		z-index: 99999;
 		top: 0;
