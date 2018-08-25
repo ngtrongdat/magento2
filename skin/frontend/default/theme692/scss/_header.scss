@@ -109,37 +109,11 @@
 	box-shadow: none;
 }
 
-.nav-container{
-	border-bottom: 0!important;
-	&:before{
-		display: none;
-	}
-	.grid-full > li > a{
-		font-size: 16px;
-		font-weight: bold;
-		text-transform: uppercase;
-		letter-spacing: 0;
-		&:hover{
-			color: $red!important;
-		}
-		&:before{
-			display: none;
-		}
-		&> span{
-			padding: 10px 15px;
-		}
-	}
-	.grid-full > li.parent > a > span:after{
-		color: $red!important;
-		top: 30%!important;
-	}
-	.grid-full > li > .level-top{
-		top: 42px;
-	}
-}
-
 .magicmenu {
 	.nav-desktop {
+		@media (max-width: 767px){
+			display: none;
+		}
 		&>.level0{
 			padding: 5px 30px 5px 0 !important;
 		}
@@ -345,41 +319,62 @@
 	}
 }
 
-.grid-full {
-	&>li{
-		&>.level-top{
-			background: #fff!important;
-			border: 1px solid #DDD!important;
+body.ind {
+
+	.swipe{
+		width: 100%;
+		z-index: 99999;
+		top: 0;
+		background-color: rgba(0,0,0,0.5);
+		.swipe-menu{
+			border-top: 0;
+			width: 100%;
+			min-height: 100vh;
+			max-width: 380px;
+			background-color: #fff;
+			.menu-header {
+		    margin: 0;
+		    padding: 20px 10px;
+		    color: #666;
+		    font-size: 16px;
+		    background: #EEE;
+		    text-transform: uppercase;
+		    overflow: hidden;
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+		    span {
+				  padding-left: 5px;
+				}
+			}
 		}
-	}
-	.catagory_children{
-		.level1{
-			margin-bottom: 30px;
-			&.active{
-				a{
-					color: $red!important;
-				}
+		.dl-menuwrapper{
+			float: none!important;
+			max-width: none!important;
+			.dl-menu{
+				position: relative!important;
+				margin: 0!important;
+
 			}
-			&:hover{
-				a{
-					color: #000!important;
-				}
-			}
-		}
-		.catagory_children li.level2{
-			margin: 0!important;
-			&:hover{
-				a{
-					color: #fff!important;
-				}
-			}
-		  a{
-		  	color: #000!important;
-		  }
 		}
 	}
 }
 
-.nav .grid-full > li{
-	background: none!important;
+.swipe-menu ul li a, .swipe-menu >a{
+  color: #565656;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 55px 15px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  border-bottom: 1px solid #EEE!important;
+	&:before{
+		display: none;
+	}
+}
+
+.swipe-menu .links li a, .footer-links-menu li a, .home-link, .swipe-menu .switch-show{
+	border-bottom: 1px solid #EEE!important;
 }

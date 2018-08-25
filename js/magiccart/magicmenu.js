@@ -17,7 +17,9 @@ jQuery(document).ready(function($) {
  //    	meanScreenWidth: "991",
 	// });	
 
-	jQuery('#dl-menu').dlmenu();
+	jQuery('#dl-menu').dlmenu({
+		animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+	});
 
 	(function(selector){
 		var $content = $(selector);

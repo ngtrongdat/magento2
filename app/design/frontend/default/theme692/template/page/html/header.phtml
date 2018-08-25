@@ -32,23 +32,25 @@ $_blockData = $this->getLayout()->getBlockSingleton('magicmenu/menu')->drawMobil
 <div class="swipe-left"></div>
 <div class="swipe">
     
+    <div class="swipe-menu">
+        <h3 class="menu-header">
+            <i class="fa fa-user"></i>
+            <span><?php echo $this->__('Account');?></span>
+        </h3>
+        <?php echo $this->getChildHtml('topLinks') ?>
+
+        <h3 class="menu-header">
+            <i class="fa fa-list"></i>
+            <span><?php echo $this->__('Category');?></span>
+        </h3>
         <?php echo $_blockData;?>
-    <!-- <div class="swipe-menu">
+
         <h3 class="menu-header">
-            <i class="fa fa-user"></i>
-            <span>Tài khoản</span>
-        </h3>
-        <?php echo $this->getChildHtml('topLinks') ?>
-        <h3 class="menu-header">
-            <i class="fa fa-user"></i>
-        </h3>
-        <?php echo $this->getChildHtml('topLinks') ?>
-        <h3 class="menu-header">
-            <i class="fa fa-user"></i>
-            <span>LIÊN KẾT</span>
+            <i class="fa fa-link"></i>
+            <span><?php echo $this->__('Links');?></span>
         </h3>
         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->__('Home') ?>" class="home-link"><?php echo $this->__('Home') ?></a>
-    </div> -->
+    </div>
 </div>
 <div class="top-icon-menu">
     <div class="swipe-control"><i class="fa fa-align-justify"></i></div>
