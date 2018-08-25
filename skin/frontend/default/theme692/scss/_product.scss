@@ -211,3 +211,37 @@
   }
 
 }
+
+.block-layered-nav dt:first-child{
+  border: none!important;
+}
+
+.block-layered-nav dt{
+  font-size: 18px;
+  font-family: SFUFuturaBook, "Open Sans", Arial;
+}
+
+.block-layered-nav dd li a{
+  font-size: 14px;
+}
+
+.block-layered-nav dd{
+  margin-bottom: 15px;
+}
+
+.sidebar{
+  .ui-slider .ui-slider-handle{
+    border-radius: 0;
+  }
+  #slider-range{
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+  .price{
+    text-align: center;
+    #amount{
+      text-align: center;
+      font-size: 13px;
+    }
+  }
+}
