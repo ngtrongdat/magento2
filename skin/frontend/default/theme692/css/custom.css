@@ -824,8 +824,10 @@ All this is done for any sub-level being entered.
   right: 0px;
   top: 40%; }
 
-.magicmenu .nav-desktop .level0.dropdown > .level0 {
-  min-width: 20em; }
+.magicmenu .nav-desktop .level0.dropdown > .level0,
+.magicmenu .nav-desktop .dl-submenu.level1 {
+  min-width: 20em !important;
+  width: auto !important; }
 
 .top-icon-menu, .swipe {
   background-color: #fff; }

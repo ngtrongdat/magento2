@@ -79,6 +79,9 @@ Category default layout
             <block type="catalog/navigation" name="catalog.leftnav" before="-" template="catalog/navigation/left.phtml"/>
             <block type="catalog/layer_view" name="catalog.leftlayerview" after="-" template="catalog/layer/view.phtml"/>
         </reference>
+        <reference name="catalog.leftlayerview">
+            <action method="unsetChild"><alias>category_filter</alias></action>
+        </reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
                 <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
@@ -114,7 +117,11 @@ Category layered navigation layout
     <catalog_category_layered translate="label">
         <label>Catalog Category (Anchor)</label>
         <reference name="left">
-            <block type="catalog/layer_view" name="catalog.leftnav" before="-" template="catalog/layer/view.phtml"/>
+            <block type="catalog/navigation" name="catalog.leftnav" before="-" template="catalog/navigation/left.phtml"/>
+            <block type="catalog/layer_view" name="catalog.leftlayerview" after="-" template="catalog/layer/view.phtml"/>
+        </reference>
+        <reference name="catalog.leftlayerview">
+            <action method="unsetChild"><alias>category_filter</alias></action>
         </reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
