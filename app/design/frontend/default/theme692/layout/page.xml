@@ -127,7 +127,9 @@ Default layout, loads most of the pages
                 </block>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
                     <label>Navigation Bar</label>
-                    <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/>
+                    <!-- <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/> -->
+                    <block type="magicmenu/menu" name="mega.catalog.topnav" template="magiccart/magicmenu/topmenu.phtml"/>
+                   
                 </block>
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
                     <label>Page Header</label>

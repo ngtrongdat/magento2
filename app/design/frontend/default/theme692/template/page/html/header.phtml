@@ -26,23 +26,29 @@
 /**
  * @var Mage_Page_Block_Html_Header $this
  */
+$_blockData = $this->getLayout()->getBlockSingleton('magicmenu/menu')->drawMobileMenu();
 ?>
 <div class="shadow"></div>
 <div class="swipe-left"></div>
 <div class="swipe">
-    <div class="swipe-menu">
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->__('Home') ?>" class="home-link"><?php echo $this->__('Home') ?></a>
+    
+        <?php echo $_blockData;?>
+    <!-- <div class="swipe-menu">
+        <h3 class="menu-header">
+            <i class="fa fa-user"></i>
+            <span>Tài khoản</span>
+        </h3>
         <?php echo $this->getChildHtml('topLinks') ?>
-        <?php echo $this->getChildHtml('currency_2') ?>
-        <?php echo $this->getChildHtml('store_language_2') ?>
-        <?php echo $this->getChildHtml('footer_links') ?>
-        <?php echo $this->getChildHtml('cms_footer_links') ?>
-        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cms_footer_links')->toHtml() ?>   
-        <div class="footer-links-menu"> 
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml() ?>  
-            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header.phtml')->toHtml(); ?>
-        </div>
-    </div>
+        <h3 class="menu-header">
+            <i class="fa fa-user"></i>
+        </h3>
+        <?php echo $this->getChildHtml('topLinks') ?>
+        <h3 class="menu-header">
+            <i class="fa fa-user"></i>
+            <span>LIÊN KẾT</span>
+        </h3>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->__('Home') ?>" class="home-link"><?php echo $this->__('Home') ?></a>
+    </div> -->
 </div>
 <div class="top-icon-menu">
     <div class="swipe-control"><i class="fa fa-align-justify"></i></div>

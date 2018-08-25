@@ -29,11 +29,6 @@
             </block>
         </reference>
       
-        <reference name="top.links">
-            <block type="blog/blog" name="add.blog.link">
-                <action method="addBlogLink" ifconfig="blog/menu/top"><param>top</param></action>
-            </block>
-        </reference>
         <reference name="head">
             <action method="addItem">
                 <type>skin_css</type>
