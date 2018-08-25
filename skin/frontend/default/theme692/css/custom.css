@@ -970,6 +970,15 @@ body.ind .swipe {
 .swipe-menu .links li a, .footer-links-menu li a, .home-link, .swipe-menu .switch-show {
   border-bottom: 1px solid #EEE !important; }
 
+.header-container-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 3px 3px #CCC;
+  transition: box-shadow 200ms; }
+
 .footer-container {
   background: #1C1C1C; }
   .footer-container .footer h4 {

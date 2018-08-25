@@ -35,15 +35,17 @@ $drawExtraMenu = $menu['extraCat'] ? $this->drawExtraMenu() : '';
 
 ?>
 <?php $sticker = $menu['sticker'] ? 'sticker' : ''; ?>
-<div class="header-sticker container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="magicmenu clearfix">
-				<ul class="nav-desktop <?php echo $sticker ?>">
-					<?php echo $drawHomeMenu ?>
-					<?php echo $drawMainMenu ?>
-					<?php echo $drawExtraMenu ?>
-				</ul>
+<div class="header-sticker">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="magicmenu clearfix">
+					<ul class="nav-desktop <?php echo $sticker ?>">
+						<?php echo $drawHomeMenu ?>
+						<?php echo $drawMainMenu ?>
+						<?php echo $drawExtraMenu ?>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
