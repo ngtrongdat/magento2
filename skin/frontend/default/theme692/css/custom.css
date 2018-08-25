@@ -15,7 +15,8 @@
 body {
   letter-spacing: 0.5px;
   font-family: SFUFutura, "Open Sans", Arial;
-  color: #222222; }
+  color: #222222;
+  font-size: 14px; }
 
 @media (min-width: 1200px) {
   .container {
@@ -41,6 +42,22 @@ a {
 
 button.button > span:after, .but-link:after {
   background-color: #c51230; }
+
+.account-create form {
+  width: 750px;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  font-size: 14px; }
+
+.form-list label {
+  font-family: SFUFuturaBook, "Open Sans", Arial; }
+
+.form-list .input-box {
+  margin-bottom: 15px; }
+
+.fieldset .legend {
+  font-size: 14px; }
 
 @font-face {
   font-family: 'icomoon';
@@ -982,6 +999,12 @@ body.ind .swipe {
   width: 100%;
   box-shadow: 0 3px 3px #CCC;
   transition: box-shadow 200ms; }
+
+.header .welcome-msg {
+  margin-bottom: 7px; }
+
+.title-buttons h1 {
+  float: none; }
 
 .footer-container {
   background: #1C1C1C; }

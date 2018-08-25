@@ -77,7 +77,6 @@
                     <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
                 </div>
             </div>
-            <p class="mini-cart"><?php echo $this->__('<strong title="%s">%s</strong>', $this->getUrl('checkout/cart'), $_cartQty) ?> </p>
     <?php else: ?>
         <div class="empty">
             <div class="summary"><?php echo $this->__('0') ?> </div>
@@ -85,7 +84,6 @@
                 <?php echo $this->__('You have no items in your shopping cart.') ?>
             </div>
         </div>
-        <p class="mini-cart"><strong>0</strong></p>
     <?php endif ?>
     </div>
 </div>

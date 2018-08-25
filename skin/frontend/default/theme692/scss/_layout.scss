@@ -2,6 +2,7 @@ body{
 	letter-spacing: 0.5px;
   font-family: $bodyfont;
   color: rgb(34,34,34);
+  font-size: 14px;
 }
 
 @media (min-width: 1200px){
@@ -35,4 +36,24 @@ a{
 
 button.button > span:after, .but-link:after{
 	background-color: $red;
+}
+
+.account-create form{
+  width: 750px;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.form-list label{
+	font-family: SFUFuturaBook, "Open Sans", Arial;
+}
+
+.form-list .input-box{
+	margin-bottom: 15px;
+}
+
+.fieldset .legend{
+	font-size: 14px;
 }
