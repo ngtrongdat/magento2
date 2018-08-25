@@ -2973,11 +2973,11 @@ body.ps-static .top-icon-menu > div:hover,
 .swipe {background-color: #323232;}
 .swipe {
     display: block;
-    left: -237px;
+    left: -100%;
     overflow: hidden;
     position: fixed;
     top: 50px;
-    width: 237px;
+    width: 100%;
     z-index:2;
     font-size: 13px;
     font-weight: bold;

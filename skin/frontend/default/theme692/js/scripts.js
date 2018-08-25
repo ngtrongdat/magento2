@@ -122,7 +122,7 @@ jQuery(document).ready(function(){
 		}
 		function swipe_animate_false(){
 			jQuery('.swipe-control').removeClass('active');
-			jQuery('.swipe').stop(true).animate({'left':'-237px'},400);
+			jQuery('.swipe').stop(true).animate({'left':'-100%'},400);
 		}
 	    jQuery('.swipe-control').click(function(){
 	    	swipe_animate_true();
