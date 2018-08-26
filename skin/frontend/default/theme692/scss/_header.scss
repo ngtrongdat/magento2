@@ -399,3 +399,10 @@ body.ind {
 .title-buttons h1{
 	float: none;
 }
+
+
+@media only screen and (max-width: 767px){
+	.block-cart-header .empty > div, .block-cart-header .summary{
+		display: block;
+	}
+}

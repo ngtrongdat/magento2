@@ -61,6 +61,9 @@
 	background: $red;
 }
 
+.products-grid .ratings{
+	display: none;
+}
 .product-shop{
 	text-align: center;
 	.actions{
@@ -73,7 +76,7 @@
 				font-family: $bodyfont;
 				font-weight: normal;
 				span{
-					padding: 16px 5px;
+					padding: 10px 5px;
 				}
 				&:after{
 					background: #000;
@@ -84,11 +87,25 @@
 			margin: 0;
 			background: #f5f5f5;
 			border: 1px solid #f5f5f5;
-			padding: 16px 5px;
+			padding: 10px 5px;
 	    display: block;
 	    float: left;
 	    width: 50%;
 		}
+	}
+}
+
+.products-grid{
+	.out-of-stock{
+		display: inline-block;
+    padding: 10px 5px;
+    width: 50%;
+    line-height: inherit;
+    background: #888;
+    span{
+    	color: #fff;
+    	font-weight: normal;
+    }
 	}
 }
 
