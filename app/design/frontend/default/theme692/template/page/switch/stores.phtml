@@ -1,0 +1,119 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Store switcher template
+ *
+ * @see Mage_Core_Block_Store_Switcher
+ */
+$skinUrl = $this->getSkinUrl().'images/';
+?>
+<?php if(count($this->getGroups())>1): 
+	$groupValue = array();
+	foreach ($this->getGroups() as $_group):
+		$groupName = $this->escapeHtml($_group->getName());
+		$groupId = $_group->getId(); //1:Mien Bac, 2:Mien Nam
+		$currentGroupId = $this->getCurrentGroupId();
+		if ($groupId == 1){
+			$groupValue['mienbac'] = array();
+			$groupValue['mienbac']['value'] = $_group->getHomeUrl();
+			$groupValue['mienbac']['checked'] = $groupId==$currentGroupId ? 'checked' : '';
+		}
+		if ($groupId == 2){
+			$groupValue['miennam'] = array();
+			$groupValue['miennam']['value'] = $_group->getHomeUrl();
+			$groupValue['miennam']['checked'] = $groupId==$currentGroupId ? 'checked' : '';
+		}
+  endforeach;
+
+	?>
+<div class="popup-wrapper">
+	<div class="popup regions">
+	  <div class="container">
+	    <div class="contents">
+	      <div class="header-icon">
+	        <img src="<?php echo $skinUrl;?>map-icon.svg">
+	      </div>
+	      <form id="store-form">
+	        <h4 class="popup-title">Vui lòng chọn khu vực mua hàng của bạn</h4>
+	        <p class="popup-description">Thao tác này giúp bạn biết chính xác trạng thái hàng hóa tại khu vực đó.</p>
+	        <div class="selection">
+	          <div class="option miennam">
+	            <input type="radio" class="region-option hidden" value="<?php echo $groupValue['miennam']['value']; ?>" name="region-selection" id="region-option-miennam" <?php echo $groupValue['miennam']['checked'];?>>
+	            <label for="region-option-miennam" class="miennam">
+	            <span class="text">Miền Nam<br>Việt Nam</span>
+	            <img src="<?php echo $skinUrl;?>saigon-colored.jpg" class="selected">
+	            <img src="<?php echo $skinUrl;?>saigon-grayscale.jpg" class="unselected">
+	            </label>
+	          </div>
+	          <div class="option mienbac">
+	            <input type="radio" class="region-option hidden" value="<?php echo $groupValue['mienbac']['value']; ?>" name="region-selection" id="region-option-mienbac" <?php echo $groupValue['mienbac']['checked'];?>>
+	            <label for="region-option-mienbac" class="mienbac">
+	            <span class="text">Miền Bắc<br>Việt Nam</span>
+	            <img src="<?php echo $skinUrl;?>hanoi-colored.jpg" class="selected">
+	            <img src="<?php echo $skinUrl;?>hanoi-grayscale.jpg" class="unselected">
+	            </label>
+	          </div>
+	        </div>
+	        <div class="proceed-button">
+	          <button class="btn btn-default">Tiếp tục mua hàng</button>
+	        </div>
+	      </form>
+	    </div>
+	    <script type="text/javascript">
+	      jQuery(function() {
+	      	jQuery('.stock-region').on('click', function(){
+	      		jQuery(".popup-wrapper").addClass('active');
+	      	});
+          var $regions_popup = jQuery(".popup-wrapper .popup.regions");
+          $regions_popup.on("change", ".region-option", function() {
+              var $button = $regions_popup.find(".proceed-button button");
+              var $checked = $regions_popup.find(".region-option:checked");
+              if($checked.length != 0) {
+                  $button.removeAttr("disabled");
+              }
+              else {
+                  $button.attr("disabled");
+              }
+          });
+          jQuery('#store-form').on('submit', function(e){
+          	e.preventDefault();
+          	window.location.href = encodeURI(jQuery('.region-option:checked').val());
+          });
+          jQuery('.popup-wrapper').on('click', function(e){
+          	if (jQuery(e.target).parents('.contents').length > 0){
+          		return;
+          	}
+          	jQuery(".popup-wrapper").removeClass('active');
+          });
+	      });
+	    </script>
+	  </div>
+	</div>
+</div>
+<div class="stock-region popup-link"></div>
+<?php endif; ?>

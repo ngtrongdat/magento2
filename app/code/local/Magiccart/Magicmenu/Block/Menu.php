@@ -78,7 +78,7 @@ class Magiccart_Magicmenu_Block_Menu extends Mage_Catalog_Block_Navigation
         $count = count($extMenu);
         $drawExtraMenu = '';
 
-        $mobileHtml  = array();
+        $mobileHtml  = '';
         $catListTop = $this->getCatTop();
         $contentCatTop  = $this->getContentCatTop();
         $extData    = array();
@@ -100,7 +100,7 @@ class Magiccart_Magicmenu_Block_Menu extends Mage_Catalog_Block_Navigation
             if($isDropdown){ // Draw Dropdown Menu
                 // $childHtml = $this->getTreeCategories($idTop);
                 $childHtml = $this->getTreeCategoriesExt($idTop); // include magic_label
-                $mobileHtml[$idTop]  = '<li class="level0">' . $urlTop . $childHtml . '</li>';
+                $mobileHtml .= '<li class="level0">' . $urlTop . $childHtml . '</li>';
                 $i++;
                 continue;
             }
@@ -139,7 +139,7 @@ class Magiccart_Magicmenu_Block_Menu extends Mage_Catalog_Block_Navigation
                 endif;
 
             endif;
-            $mobileHtml[$idTop]  = '<li class="level0">' . $urlTop . $mobileTmp . '</li>';
+            $mobileHtml .= '<li class="level0">' . $urlTop . $mobileTmp . '</li>';
             $i++;
         endforeach;
 
@@ -161,9 +161,9 @@ class Magiccart_Magicmenu_Block_Menu extends Mage_Catalog_Block_Navigation
                 $class = ($i == $count) ? 'last' : '';  
             }
         }
-        $mobileHtml[$idTop] = '<div id="dl-menu" class="dl-menuwrapper"><ul class="dl-menu dl-menuopen dl-menu-toggle">'.$mobileHtml[$idTop].$drawExtraMenu.'</ul></div>';
-
-        $menu['mobile'] = implode("\n", $mobileHtml);
+        $mobileHtml = '<div id="dl-menu" class="dl-menuwrapper"><ul class="dl-menu dl-menuopen dl-menu-toggle">'.$mobileHtml.$drawExtraMenu.'</ul></div>';
+        
+        $menu['mobile'] = $mobileHtml;
         $this->setData('drawMobileMenu', $menu['mobile']);
         return $menu['mobile'];
     }

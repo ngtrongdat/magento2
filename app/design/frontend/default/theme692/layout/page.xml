@@ -117,6 +117,7 @@ Default layout, loads most of the pages
                     </block>
                 </block>
 
+                <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
                 <block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
                 <block type="page/switch" name="store_language_2" as="store_language_2" template="page/switch/languages_2.phtml"/>
@@ -164,7 +165,6 @@ Default layout, loads most of the pages
                     <label>Page Footer</label>
                     <action method="setElementClass"><value>bottom-container</value></action>
                 </block>
-                <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
                 <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml"/>
                 <action method="unsetData"><key>cache_lifetime</key></action>
                 <action method="unsetData"><key>cache_tags</key></action>

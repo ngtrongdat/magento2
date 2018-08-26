@@ -48,7 +48,6 @@
 					<div class="footer-shadow">
 						<address><?php echo $this->getCopyright() ?></address>
 						<div class="clear"></div>
-						<?php echo $this->getChildHtml('store_switcher') ?>
 							<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
 								if ($current_page == 'cms'):
 									echo '<!--{%FOOTER_LINK}-->';
