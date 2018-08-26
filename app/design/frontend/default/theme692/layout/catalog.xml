@@ -222,12 +222,23 @@ Product view
                 <remove name="product.info.upsell" />
 
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
-                <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
-                    <action method="addToParentGroup"><group>detailed_info</group></action>
-                </block>
+
+                <!--<block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">-->
+                    <!--<action method="addToParentGroup"><group>detailed_info</group></action>-->
+                <!--</block>-->
+
+                <!--<block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">-->
+                    <!--<action method="addToParentGroup"><group>detailed_info</group></action>-->
+                <!--</block>-->
                 <block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">
                     <action method="addToParentGroup"><group>detailed_info</group></action>
                 </block>
+
+
+                <block type="catalog/product_view_description" name="product.storage_guide" as="storage_guide" template="catalog/product/view/storage_guide.phtml">
+                    <action method="addToParentGroup"><group>detailed_info</group></action>
+                </block>
+
                 <block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>
                 <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>
 

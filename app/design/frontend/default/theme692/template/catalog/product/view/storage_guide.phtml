@@ -23,26 +23,20 @@
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+
+/**
+ * Product description template
+ *
+ * @see Mage_Catalog_Block_Product_View_Description
+ */
 ?>
-<?php if($crumbs && is_array($crumbs)): ?>
-<div class="breadcrumbs">
-  <div class="container">
-    <ul>
-        <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
-            <li class="<?php echo $_crumbName ?>">
-            <?php if($_crumbInfo['link']): ?>
-                <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->htmlEscape($_crumbInfo['title']) ?>"><?php echo $this->htmlEscape($_crumbInfo['label']) ?></a>
-            <?php elseif($_crumbInfo['last']): ?>
-                <strong><?php echo $this->htmlEscape($_crumbInfo['label']) ?></strong>
-            <?php else: ?>
-                <?php echo $this->htmlEscape($_crumbInfo['label']) ?>
-            <?php endif; ?>
-<!--            --><?php //if(!$_crumbInfo['last']): ?>
-<!--                <span>></span>-->
-<!--            --><?php //endif; ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-  </div>
-</div>
+<?php //var_dump($this->getProduct()); ?>
+<?php $_description = $this->getProduct()->getStorageGuide(); ?>
+<?php if ($_description): ?>
+    <h2><?php echo $this->__('Storage Guide') ?></h2>
+	<div class="box-collateral-content">
+		<div class="std">
+			<?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'storage_guide') ?>
+		</div>
+	</div>
 <?php endif; ?>

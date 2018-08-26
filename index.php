@@ -23,7 +23,7 @@
  * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-
+//die("slkdglkg");
 if (version_compare(phpversion(), '5.3.0', '<')===true) {
     echo  '<div style="font:12px/1.35em arial, helvetica, sans-serif;">
 <div style="margin:0 0 25px 0; border-bottom:1px solid #ccc;">
@@ -70,7 +70,7 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
     Mage::setIsDeveloperMode(true);
 }
 
-#ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 
 umask(0);
 
