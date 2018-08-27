@@ -67,3 +67,9 @@ button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore
 .page-title h1, .page-title h2{
   text-transform: uppercase;
 }
+
+@media (max-width: 768px){
+  .page-title{
+    margin: 0 0 10px!important;
+  }
+}

@@ -67,6 +67,10 @@ button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore
 .page-title h1, .page-title h2 {
   text-transform: uppercase; }
 
+@media (max-width: 768px) {
+  .page-title {
+    margin: 0 0 10px !important; } }
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot");
@@ -1005,6 +1009,9 @@ body.ind .swipe {
     body.ind .swipe .dl-menuwrapper .dl-menu {
       position: relative !important;
       margin: 0 !important; }
+
+.swipe-menu .links li.top-car {
+  display: block; }
 
 .swipe-menu ul li a, .swipe-menu > a {
   color: #565656;
