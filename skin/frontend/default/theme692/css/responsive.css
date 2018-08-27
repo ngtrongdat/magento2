@@ -330,7 +330,6 @@
 	.form-list .name-middlename input.input-text {width:99%;}
 	.form-list .customer-dob .dob-year input.input-text {width:146px;}
 	#checkout-payment-method-load input.input-text {width: 100%;}
-	#shopping-cart-table { display:block; width:100%;}
 	#checkout-step-login .col-2 .form-list input.input-text {width:253px;}
 	.multiple-checkout .page-title.title-buttons h1 {margin-bottom: 10px;}
 	
@@ -426,33 +425,6 @@
 	.product-view .product-shop {float: none; width: 100%;} 
 
 	/*====================================== cart table	========================================*/
-	.cart .data-table,
-	.cms-template-settings .data-table {position: relative; padding-bottom: 90px;}
- 	.cart .data-table thead,
- 	.cart .data-table colgroup,
- 	.cms-template-settings .data-table thead,
- 	.cms-template-settings .data-table colgroup {display: none; }
- 	.cart .data-table tfoot,
- 	.cms-template-settings .data-table tfoot {width: 100%; display: block;}
- 	.cart .data-table td,
- 	.cart .data-table tr,
- 	.cart .data-table tbody,
- 	.cms-template-settings .data-table td,
- 	.cms-template-settings .data-table tr,
- 	.cms-template-settings .data-table tbody {display: block; text-align: center !important;}
- 	.cart .data-table td,
- 	.cms-template-settings .data-table td {margin: 0 10px; border: 0; border-bottom: 1px solid #ddd;}
- 	.cart .data-table td.last,
- 	.cms-template-settings .data-table td:last-child  {border: 0;}
- 	.cart .data-table tr,
- 	.cms-template-settings .data-table tr {
- 		margin: 4px 0 25px; 
- 		border: 1px solid #ddd;
- 		box-shadow:0 0px 13px rgba(0,0,0,0.15);
-		-moz-box-shadow:0 0px 13px rgba(0,0,0,0.15);
-		-webkit-box-shadow:0 0px 13px rgba(0,0,0,0.15);
- 	}
- 	.cart .data-table tfoot {position: absolute; bottom: 0; left: 0;}
  	.cart .data-table tfoot button.button {margin: 3px 0;}
 
  	.data-table button.button > span {font-size: 12px;}

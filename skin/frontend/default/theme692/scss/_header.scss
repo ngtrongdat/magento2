@@ -224,11 +224,19 @@
 	a {
 		color: $bodytext;
 		font-weight: normal;
+		&:hover{
+			background: rgba(255, 248, 213, 0.1);
+		}
 	}
 	.links li, .footer-links-menu li{
 		a{
 			color: $bodytext;
 			font-weight: normal;
+		}
+		&:hover{
+			a{
+				background: rgba(255, 248, 213, 0.1);
+			}
 		}
 	}
 	font-family: $bodyfont;
@@ -236,6 +244,11 @@
 	font-weight: normal;
 	.label{
 		font-weight: normal!important;
+	}
+	.buttons a {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
 	}
 }
 

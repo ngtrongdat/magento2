@@ -504,3 +504,9 @@
     width: 100%!important;
   }
 }
+
+.checkout-types{
+  button.button > span{
+    background-color: $red;
+  }
+}

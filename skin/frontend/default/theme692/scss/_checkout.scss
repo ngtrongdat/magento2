@@ -1,0 +1,223 @@
+table{
+	font-family: $bookfont;
+	&.cart-table{
+		th{
+			border: none;
+			border-top: 1px solid #e5e5e5;
+			border-bottom: 1px solid #e5e5e5;
+			text-align: center;
+			color: #9c9c9c;
+			text-transform: uppercase;
+			&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(5){
+				width: 20%;
+			}
+			&:nth-child(4){
+				width: 15%;
+			}
+			&:nth-child(6){
+				width: 5%;
+			}
+		}
+		td{
+			border: none;
+			border-top: 1px solid #e5e5e5;
+			border-bottom: 1px solid #e5e5e5;
+			text-align: center;    
+			vertical-align: middle;
+		}
+		.product-image{
+			border: none;
+			width: 100%;
+			background: none;
+		}
+		.price{
+			font-size: 16px;
+    	font-weight: bold;
+		}
+		.btn-remove2{
+			padding-top: 15px;
+		}
+		.btn-continue, .btn-update, .btn-empty{
+			&>span{
+				color: #777;
+				background: #EEE;
+			}
+			&:hover{
+				&>span{
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.discount-form {
+	width: 370px;
+  .input-box {
+  	display: inline-block;    
+  	vertical-align: top;
+  	.input-text{
+	    border: 0;
+	    width: 260px!important;
+	    height: 40px;
+	    padding: 4px 10px;
+	    background: #FFF;
+			border: 1px solid #c51230;
+			display: inline-block;
+		}
+	}
+	.buttons-set {
+    height: 40px;
+    width: 100px;
+		display: inline-block;
+		padding: 0!important;
+		position: relative;
+		left: -6px;    
+		vertical-align: top;
+		button{
+			margin: 0!important;
+			height: 40px;
+		}
+		span{
+	    padding: 11px 15px;
+	    white-space: nowrap;
+	    background: #c51230;
+	    letter-spacing: 1px;
+	    color: #fff;
+	    span{
+	    	padding: 0;
+	    }
+		}
+	}
+}
+
+.cart .totals {
+	background: transparent;
+	table{
+		tr{
+			border: none;
+		}
+		th, td{
+			color: #222;
+			text-transform: uppercase;
+		}
+	}
+	.price{
+		color: #222;
+		font-weight: bold;
+	}
+}
+
+@media only screen and (max-width: 767px){
+	#shopping-cart-table{
+		display: table;
+	}
+	.cart .data-table tfoot{
+		display: table-footer-group;
+		position: relative;
+		top: auto; left: auto;
+	}
+	.cart .data-table tr{
+		display: table-row;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		border: none;
+	}
+	table.cart-table th{
+		font-size: 12px;
+	}
+	.cart .data-table td{
+		display: table-cell;
+	}
+	.cart-table{
+		thead tr th, tbody tr td{
+			&:nth-child(3), &:nth-child(5){
+				display: none;
+			}
+			&:nth-child(1), &:nth-child(2){
+				width: 40%;
+			}
+			&:nth-child(4), &:nth-child(6){
+				width: 10%;
+			}
+		}
+		.product-name a{
+			white-space: normal;
+		}
+	}
+	#shopping-cart-table .product-image{
+		max-width: 100px;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.block-cart-header .mini-products-list li.item{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border-bottom: 1px dashed #ccc;
+	padding: 10px;
+}
+.mini-products-list .product-control-buttons{
+	position: absolute;
+	right: 15px;
+}
+.block-cart-header .mini-products-list .product-name{
+	float: left;
+	width: 160px!important;
+	margin: 0;
+}
+.block-cart-header .mini-products-list .product-details{
+	float: left;
+	width: 160px;
+	margin: 0;
+}
+.block-cart-header .subtotal .price{
+	font-weight: bold;
+	color: $red;
+}
+.block-cart-header .actions{
+	text-align: center;
+	button.button{
+		float: none;
+		span span{
+			padding: 10px 23px;
+		}
+		&:nth-child(1){
+			&> span{
+				background: $red;
+			}
+		}
+		&:nth-child(2){
+			span span{
+				padding: 8px 24px;
+			}
+			&> span{
+				background: transparent;
+				border: 2px solid $red;
+				color: $red;
+				&:hover{
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.opc .step-title{
+	letter-spacing: 1.5px;
+  color: #a6a6a6;
+  background: #ebebeb;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.opc .step-title .number{
+	background: transparent;
+}
+
+.block-progress dt{
+	text-transform: uppercase;
+	font-weight: normal;
+}

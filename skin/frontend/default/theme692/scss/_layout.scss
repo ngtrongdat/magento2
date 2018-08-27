@@ -57,3 +57,13 @@ button.button > span:after, .but-link:after{
 .fieldset .legend{
 	font-size: 14px;
 }
+
+button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore{
+  font-family: $bookfont;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.page-title h1, .page-title h2{
+  text-transform: uppercase;
+}

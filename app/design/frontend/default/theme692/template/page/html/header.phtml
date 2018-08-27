@@ -27,12 +27,20 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 $_blockData = $this->getLayout()->getBlockSingleton('magicmenu/menu')->drawMobileMenu();
+$skinUrl = $this->getSkinUrl();
 ?>
 <div class="shadow"></div>
 <div class="swipe-left"></div>
 <div class="swipe">
     
     <div class="swipe-menu">
+        <div class="buttons text-right">
+            <a class="btn-close">
+                <span class="icon">
+                    <img width="20px" height="20px" src="<?php echo $skinUrl.'images/close.svg';?>">
+                </span>
+            </a>
+        </div>
         <h3 class="menu-header">
             <i class="fa fa-user"></i>
             <span><?php echo $this->__('Account');?></span>

@@ -59,6 +59,14 @@ button.button > span:after, .but-link:after {
 .fieldset .legend {
   font-size: 14px; }
 
+button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore {
+  font-family: SFUFuturaBook, "Open Sans", Arial;
+  font-weight: normal;
+  text-transform: uppercase; }
+
+.page-title h1, .page-title h2 {
+  text-transform: uppercase; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot");
@@ -876,11 +884,19 @@ All this is done for any sub-level being entered.
   .swipe a {
     color: #222;
     font-weight: normal; }
+    .swipe a:hover {
+      background: rgba(255, 248, 213, 0.1); }
   .swipe .links li a, .swipe .footer-links-menu li a {
     color: #222;
     font-weight: normal; }
+  .swipe .links li:hover a, .swipe .footer-links-menu li:hover a {
+    background: rgba(255, 248, 213, 0.1); }
   .swipe .label {
     font-weight: normal !important; }
+  .swipe .buttons a {
+    display: block;
+    padding: 10px;
+    cursor: pointer; }
 
 @media only screen and (max-width: 991px) {
   .nav-container-mobile {
@@ -1741,6 +1757,9 @@ body.ind .swipe {
   .product-view .product-shop {
     width: 100% !important; } }
 
+.checkout-types button.button > span {
+  background-color: #c51230; }
+
 .breadcrumbs {
   padding: 17px 0;
   background-color: #f5f5f5;
@@ -1763,3 +1782,168 @@ body.ind .swipe {
     .breadcrumbs ul li a, .breadcrumbs ul li strong {
       color: #444;
       font-size: 12px; }
+
+table {
+  font-family: SFUFuturaBook, "Open Sans", Arial; }
+  table.cart-table th {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    color: #9c9c9c;
+    text-transform: uppercase; }
+    table.cart-table th:nth-child(1), table.cart-table th:nth-child(2), table.cart-table th:nth-child(3), table.cart-table th:nth-child(5) {
+      width: 20%; }
+    table.cart-table th:nth-child(4) {
+      width: 15%; }
+    table.cart-table th:nth-child(6) {
+      width: 5%; }
+  table.cart-table td {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    vertical-align: middle; }
+  table.cart-table .product-image {
+    border: none;
+    width: 100%;
+    background: none; }
+  table.cart-table .price {
+    font-size: 16px;
+    font-weight: bold; }
+  table.cart-table .btn-remove2 {
+    padding-top: 15px; }
+  table.cart-table .btn-continue > span, table.cart-table .btn-update > span, table.cart-table .btn-empty > span {
+    color: #777;
+    background: #EEE; }
+  table.cart-table .btn-continue:hover > span, table.cart-table .btn-update:hover > span, table.cart-table .btn-empty:hover > span {
+    color: #fff; }
+
+.discount-form {
+  width: 370px; }
+  .discount-form .input-box {
+    display: inline-block;
+    vertical-align: top; }
+    .discount-form .input-box .input-text {
+      border: 0;
+      width: 260px !important;
+      height: 40px;
+      padding: 4px 10px;
+      background: #FFF;
+      border: 1px solid #c51230;
+      display: inline-block; }
+  .discount-form .buttons-set {
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    padding: 0 !important;
+    position: relative;
+    left: -6px;
+    vertical-align: top; }
+    .discount-form .buttons-set button {
+      margin: 0 !important;
+      height: 40px; }
+    .discount-form .buttons-set span {
+      padding: 11px 15px;
+      white-space: nowrap;
+      background: #c51230;
+      letter-spacing: 1px;
+      color: #fff; }
+      .discount-form .buttons-set span span {
+        padding: 0; }
+
+.cart .totals {
+  background: transparent; }
+  .cart .totals table tr {
+    border: none; }
+  .cart .totals table th, .cart .totals table td {
+    color: #222;
+    text-transform: uppercase; }
+  .cart .totals .price {
+    color: #222;
+    font-weight: bold; }
+
+@media only screen and (max-width: 767px) {
+  #shopping-cart-table {
+    display: table; }
+  .cart .data-table tfoot {
+    display: table-footer-group;
+    position: relative;
+    top: auto;
+    left: auto; }
+  .cart .data-table tr {
+    display: table-row;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none; }
+  table.cart-table th {
+    font-size: 12px; }
+  .cart .data-table td {
+    display: table-cell; }
+  .cart-table thead tr th:nth-child(3), .cart-table thead tr th:nth-child(5), .cart-table tbody tr td:nth-child(3), .cart-table tbody tr td:nth-child(5) {
+    display: none; }
+  .cart-table thead tr th:nth-child(1), .cart-table thead tr th:nth-child(2), .cart-table tbody tr td:nth-child(1), .cart-table tbody tr td:nth-child(2) {
+    width: 40%; }
+  .cart-table thead tr th:nth-child(4), .cart-table thead tr th:nth-child(6), .cart-table tbody tr td:nth-child(4), .cart-table tbody tr td:nth-child(6) {
+    width: 10%; }
+  .cart-table .product-name a {
+    white-space: normal; }
+  #shopping-cart-table .product-image {
+    max-width: 100px; }
+    #shopping-cart-table .product-image img {
+      width: 100%; } }
+
+.block-cart-header .mini-products-list li.item {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-bottom: 1px dashed #ccc;
+  padding: 10px; }
+
+.mini-products-list .product-control-buttons {
+  position: absolute;
+  right: 15px; }
+
+.block-cart-header .mini-products-list .product-name {
+  float: left;
+  width: 160px !important;
+  margin: 0; }
+
+.block-cart-header .mini-products-list .product-details {
+  float: left;
+  width: 160px;
+  margin: 0; }
+
+.block-cart-header .subtotal .price {
+  font-weight: bold;
+  color: #c51230; }
+
+.block-cart-header .actions {
+  text-align: center; }
+  .block-cart-header .actions button.button {
+    float: none; }
+    .block-cart-header .actions button.button span span {
+      padding: 10px 23px; }
+    .block-cart-header .actions button.button:nth-child(1) > span {
+      background: #c51230; }
+    .block-cart-header .actions button.button:nth-child(2) span span {
+      padding: 8px 24px; }
+    .block-cart-header .actions button.button:nth-child(2) > span {
+      background: transparent;
+      border: 2px solid #c51230;
+      color: #c51230; }
+      .block-cart-header .actions button.button:nth-child(2) > span:hover {
+        color: #fff; }
+
+.opc .step-title {
+  letter-spacing: 1.5px;
+  color: #a6a6a6;
+  background: #ebebeb;
+  text-transform: uppercase;
+  font-size: 14px; }
+
+.opc .step-title .number {
+  background: transparent; }
+
+.block-progress dt {
+  text-transform: uppercase;
+  font-weight: normal; }
