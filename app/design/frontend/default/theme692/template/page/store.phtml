@@ -1,0 +1,139 @@
+<?php 
+if (Mage::getStoreConfig('googlemap/embed/active', Mage::app()->getStore())):	
+
+	$map_settings = array();
+	$stores = Mage::app()->getStores();
+	$index = 1;
+	foreach ($stores as $store) {
+    $storeId = $store->getStoreId();
+    $map_settings[$index] = array(
+			'api_key' 				=> Mage::getStoreConfig('googlemap/embed/api_key', $store),
+			'sensor' 				=> Mage::getStoreConfig('googlemap/embed/sensor', $store),	
+			'zoom' 					=> Mage::getStoreConfig('googlemap/embed/zoom',$store),	
+			'type' 					=> Mage::getStoreConfig('googlemap/embed/type', $store),	
+			'styles' 				=> Mage::getStoreConfig('googlemap/embed/styles', $store),	
+			'coordinates' 			=> Mage::getStoreConfig('googlemap/embed/coordinates', $store),	
+			'width' 				=> Mage::getStoreConfig('googlemap/embed/width', $store),	
+			'height' 				=> Mage::getStoreConfig('googlemap/embed/height', $store),	
+			'ui' 					=> Mage::getStoreConfig('googlemap/embed/ui', $store),	
+			'scrollwheel' 			=> Mage::getStoreConfig('googlemap/embed/scrollwheel', $store),	
+			'draggable' 			=> Mage::getStoreConfig('googlemap/embed/draggable', $store),	
+			'marker' 				=> Mage::getStoreConfig('googlemap/embed/marker', $store),	
+			'marker_coordinates' 	=> Mage::getStoreConfig('googlemap/embed/marker_coordinates', $store),	
+			'marker_title' 			=> Mage::getStoreConfig('googlemap/embed/marker_title', $store),	
+			'infowindow' 			=> Mage::getStoreConfig('googlemap/embed/infowindow', $store),	
+			'city' 			=> Mage::getStoreConfig('googlemap/embed/city', $store),
+			'address' 			=> Mage::getStoreConfig('googlemap/embed/address', $store),	 
+			'phone' 			=> Mage::getStoreConfig('googlemap/embed/phone', $store),	 	 
+			'id'          => $index
+		);
+		$index++;
+  }
+  ?>
+  <div class="our-shops-container">
+	  <?php 
+			$i = 1;
+			foreach ($map_settings as $map_setting) {?> 
+			<div class="block-embed-googlemap data-switch" style="height:<?php echo $map_setting['height']; ?>" data-group="<?php echo $map_setting['id'];?>">	
+				<div class="block-content">
+					<div id="map_canvas_embed_<?php echo $i;?>" style="width:<?php echo $map_setting['width']; ?>; height:<?php echo $map_setting['height']; ?>"></div>
+			  </div>
+			</div>
+		<?php $i++; } ?>
+
+	  <div class="groups">
+	  	<?php foreach ($map_settings as $map_setting) {?>
+	      <div class="group" data-group="<?php echo $map_setting['id'];?>">
+	        <h3 class="name text-uppercase">
+	          <span><?php echo $map_setting['city'];?></span>
+	        </h3>
+	      </div>
+	    <?php } ?>
+	  </div>
+
+	  <div class="locations">
+	  	<?php foreach ($map_settings as $map_setting) {?>
+	      <div class="location data-switch" data-group="<?php echo $map_setting['id'];?>">
+	      	<span class="label"><?php echo $this->__('Address:'); ?></span>
+	        <h3 class="name text-uppercase"><?php echo $map_setting['address'];?></h3>
+	      	<span class="label"><?php echo $this->__('Phone Number:'); ?></span>
+	        <h3 class="name text-uppercase"><?php echo $map_setting['phone'];?></h3>
+	      </div>
+	    <?php } ?>
+	  </div>
+	</div>
+	<script type="text/javascript">
+		function tm_googlemap_embed_initialize() {
+
+			var mapOptions1 = {
+				zoom: <?php echo $map_settings[1]['zoom']; ?>,
+				center: new google.maps.LatLng(<?php echo $map_settings[1]['coordinates']; ?>),
+				mapTypeId: google.maps.MapTypeId.<?php echo $map_settings[1]['type']; ?>,
+				styles: <?php echo $map_settings[1]['styles']; ?>,
+				disableDefaultUI: <?php echo $map_settings[1]['ui']; ?>,
+				scrollwheel: <?php echo $map_settings[1]['scrollwheel']; ?>,
+			    draggable: <?php echo $map_settings[1]['draggable']; ?>
+			}
+			var map1 = new google.maps.Map(document.getElementById("map_canvas_embed_1"), mapOptions1);
+
+			var mapOptions2 = {
+				zoom: <?php echo $map_settings[2]['zoom']; ?>,
+				center: new google.maps.LatLng(<?php echo $map_settings[2]['coordinates']; ?>),
+				mapTypeId: google.maps.MapTypeId.<?php echo $map_settings[2]['type']; ?>,
+				styles: <?php echo $map_settings[2]['styles']; ?>,
+				disableDefaultUI: <?php echo $map_settings[2]['ui']; ?>,
+				scrollwheel: <?php echo $map_settings[2]['scrollwheel']; ?>,
+			    draggable: <?php echo $map_settings[2]['draggable']; ?>
+			}
+			var map2 = new google.maps.Map(document.getElementById("map_canvas_embed_2"), mapOptions2);
+
+			<?php
+			foreach ($map_settings as $map_setting) {
+				$id = $map_setting['id'];
+				if ($map_settings[$id]['marker']): ?>
+					// Marker settings
+					var markerLatlng = new google.maps.LatLng(<?php echo $map_settings[$id]['marker_coordinates']; ?>);
+
+					var marker = new google.maps.Marker({
+						position: markerLatlng,
+						title: "<?php echo $map_settings[$id]['marker_title']; ?>"
+					});
+
+					var contentString = "<?php echo $map_settings[$id]['infowindow']; ?>";
+
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
+
+			<?php 
+				echo "marker.setMap(map".$id.");";	
+				endif; } ?>
+		}
+
+		function tm_googlemap_embed_loadScript() {
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = "http://maps.googleapis.com/maps/api/js?v=3.9&key=<?php echo $map_settings[1]['api_key']; ?>&sensor=<?php echo $map_settings[1]['sensor']; ?>&callback=tm_googlemap_embed_initialize";
+			document.body.appendChild(script);
+		}
+
+		window.onload = tm_googlemap_embed_loadScript;
+
+		jQuery(document).on('ready', function(){
+			jQuery('.group').click(function(){
+				jQuery('.group').removeClass('active');
+				jQuery(this).addClass('active');
+				var groupId = jQuery(this).attr('data-group');
+				jQuery('.data-switch').hide();
+				jQuery('[data-group='+groupId+']').show();
+			});
+
+			jQuery('.group[data-group="1"]').click();
+		});
+	</script>
+
+<?php endif; ?>

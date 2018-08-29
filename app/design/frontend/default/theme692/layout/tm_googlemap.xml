@@ -6,7 +6,7 @@
 			<action method="addItem"><type>skin_css</type><name>css/tm/googlemap/tm_googlemap.css</name></action>
 		</reference>
 		<reference name="footer">
-			<block type="core/template" name="tm_googlemap_embed" as="tm_googlemap_embed" template="tm/googlemap/embed_map.phtml"/>
+			<!-- <block type="core/template" name="tm_googlemap_embed" as="tm_googlemap_embed" template="tm/googlemap/embed_map.phtml"/> -->
 		</reference>
 	</default>
 	<contacts_index_index>

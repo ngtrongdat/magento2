@@ -71,6 +71,53 @@ button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore
   .page-title {
     margin: 0 0 10px !important; } }
 
+.data-switch {
+  display: none; }
+
+.our-shops-container {
+  font-family: SFUFuturaBook, "Open Sans", Arial; }
+  .our-shops-container .groups {
+    margin: 20px 0 30px;
+    text-align: center; }
+    .our-shops-container .groups .group {
+      display: inline-block;
+      cursor: pointer; }
+      .our-shops-container .groups .group .name {
+        margin: 10px;
+        position: relative;
+        font-size: 25px; }
+        .our-shops-container .groups .group .name:after {
+          content: "";
+          display: block;
+          margin: 0 auto;
+          width: 40px;
+          height: 3px;
+          background: #FFF; }
+        .our-shops-container .groups .group .name span {
+          display: block;
+          padding: 10px; }
+      .our-shops-container .groups .group.active {
+        color: #c51230; }
+        .our-shops-container .groups .group.active .name:after {
+          background: #c51230; }
+  .our-shops-container .locations {
+    text-align: center; }
+    .our-shops-container .locations .label {
+      font-size: 18px;
+      color: #222;
+      font-weight: normal; }
+    .our-shops-container .locations .name {
+      font-size: 20px;
+      margin-bottom: 20px; }
+
+@media (max-width: 767px) {
+  .our-shops-container .groups .group .name {
+    font-size: 14px; }
+  .our-shops-container .locations .label {
+    font-size: 12px; }
+  .our-shops-container .locations .name {
+    font-size: 14px; } }
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot");

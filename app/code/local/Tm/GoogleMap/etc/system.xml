@@ -189,6 +189,36 @@
 						    <show_in_website>1</show_in_website>
 						    <show_in_store>1</show_in_store>
 						</infowindow>
+
+						<city translate="label">
+						    <label>City name</label>
+						    <comment><![CDATA[City name]]></comment>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>180</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</city>	
+
+						<address translate="label">
+						    <label>Address</label>
+						    <comment><![CDATA[Store Address]]></comment>
+						    <frontend_type>textarea</frontend_type>
+						    <sort_order>190</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</address>
+
+						<phone translate="label">
+						    <label>Phone</label>
+						    <comment><![CDATA[Store Phone Number]]></comment>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>200</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</phone>
 					</fields>
 				</embed>
 				<contacts>

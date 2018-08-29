@@ -285,8 +285,7 @@ button.button > span,
 .page-sitemap .links a,
 .but-link,
 .scrollpages a.loadmore {
-	font-family:"Noto Sans",sans-serif;
-	background:#303c4b;
+	background:#c51230;
 	color:#fff;
 	font-size:14px;
 	line-height:19px;
@@ -829,7 +828,7 @@ tr.summary-details-excluded { font-style:italic; }
 .header .form-search .input-text:focus::-webkit-input-placeholder{ color: #ccc;}
 .header .form-search .input-text:focus::-moz-placeholder { color: #ccc;}
 .header .form-search button.button { float: right; } 
-.header .form-search button.button > span { width: 51px; height: 51px; color: #fff; background: #303c4b;}
+.header .form-search button.button > span { width: 51px; height: 51px; color: #fff; background: #c51230;}
 .header .form-search button.button:hover > span { }
 .header .form-search button.button > span span {padding: 11px 19px 10px; font-size: 13px; text-transform: capitalize;  display: none;}
 .header .form-search button.button span:before {content: "\f002"; font-size: 17px; display: block; line-height: 50px;}
@@ -2620,9 +2619,9 @@ body.ps-static .wrapper-hover:hover .product-image {
 .account-login .new-users .buttons-set{ padding-left:0;}
 .account-login .new-users .buttons-set button.button {float:left;}
 .account-login .new-users-wrapper { float:left;margin-bottom:20px; width:48%; }
-.account-login .new-users {	background:url(../images/media/bg-login.gif) no-repeat right bottom #ffffff; border:1px solid #e5e5e5;padding:20px;	min-height:324px;}
+.account-login .new-users { border:1px solid #e5e5e5;padding:20px;	min-height:324px;}
 .account-login .registered-users-wrapper { float:right;margin-bottom:20px; width:50%; }
-.account-login .registered-users {background:url(../images/media/bg-login-2.gif) no-repeat right bottom #ffffff;border:1px solid #e5e5e5;padding:20px;	min-height:260px;}
+.account-login .registered-users {border:1px solid #e5e5e5;padding:20px;	min-height:260px;}
 .account-login .registered-users h2,
 .account-login .new-users h2,
 .le-login-facebook h2 { padding:0 0 15px 0; border-bottom:1px solid #e5e5e5; font-size:12px; text-transform:uppercase; color:#c51230;}
@@ -3521,7 +3520,7 @@ body.ps-static .row-banner a:hover .fa {
 }
 button.btn-row  > span {font-size: 25px; background: #c51230;}
 button.btn-row span span {padding: 26px 35px;}
-button.btn-row > span:after {background: #303c4b;}
+button.btn-row > span:after {background: #c51230;}
 .box-2 .desc-row {
 	font-size: 70px;
 	line-height: 70px;
