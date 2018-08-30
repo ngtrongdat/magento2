@@ -256,3 +256,81 @@
     flex-direction: column;
 	}
 }
+
+.account-login .new-users,
+.account-login .registered-users{
+	border: none;
+}
+
+.social-button a {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  background: #ffffff;
+  width: 280px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 10px;
+}
+
+a.btn-facebook {
+  color: #3b5997;
+  border: 2px solid #3b5997;
+  text-decoration: none;
+  img {
+    margin-bottom: 5px;
+    height: 17px;
+	}
+}
+
+a.btn-google {
+  color: #d34836;
+  border: 2px solid #d34836;
+  img {
+    margin-bottom: 5px;
+    height: 17px;
+	}
+}
+
+.inchoo-socialconnect-login-lower{
+	text-align: center;
+	.col-1, .col-2{
+		display: inline-block;
+	}
+}
+
+.account-login{
+	.separator{
+		text-align: center;
+		.content{
+			min-height: 0;
+			position: relative;
+			span{
+				background: #fff;
+				display: inline-block;
+				padding: 10px;
+				position: relative;
+				z-index: 9;
+			}
+			&:after{
+				content:'';
+				width: 200px;
+				height: 1px;
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -100px;
+				background: #222;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.account-login .new-users{
+		min-height: 0;
+	}
+}
