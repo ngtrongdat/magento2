@@ -221,3 +221,23 @@ table{
 	text-transform: uppercase;
 	font-weight: normal;
 }
+
+
+
+.gcheckout-onepage-wrap {
+	.glc-title {
+		background-color: #c51230;
+		background-image: none;
+	}
+}
+
+.glc {
+	#gcheckout-onepage-review {
+		button.button {
+			span span {
+				background-color: #c51230;
+				background-image: none;
+			}
+		}
+	}
+}
