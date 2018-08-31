@@ -1,0 +1,119 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Category left navigation
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Category left navigation
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+
+
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $categoryId = 6;?>
+<?php $category = Mage::getModel('catalog/category')->load($categoryId) ?>
+<?php $_categories = $category->getChildrenCategories() ?>
+<?php $_curCategory = Mage::registry('current_category');   
+  $_curCategoryId = $_curCategory->getId();
+  $_parentCategoryId = $_curCategory->getParentCategory()->getId();
+?>
+<?php if (count($_categories) > 0): ?>
+  <div class="block categories hidden-xs">
+    <div class="block-contents">
+      <div id="cssmenu" class="two-level">
+        <ul>
+          <?php foreach($_categories as $_category): 
+            $_categoryId = $_category->getId();
+            $level1Selected = ($_categoryId == $_curCategoryId || $_categoryId == $_parentCategoryId) ? 'selected' : '';
+            ?>
+              <li class="has-sub <?php echo $level1Selected;?>">
+                  <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><?php echo $_category->getName() ?></a>
+                  <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+                  <?php if($_category->hasChildren()):?>
+                  <?php $_subcategories = $_category->getChildrenCategories() ?>
+                      <ul>
+                          <?php foreach($_subcategories as $_subcategory): 
+                            $_subcategoryId = $_subcategory->getId();
+                            $level2Selected = ($_subcategoryId == $_curCategoryId) ? 'selected' : '';
+                          ?>
+                              <li class="<?php echo $level2Selected;?>">
+                                  <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>"><?php echo $_subcategory->getName() ?></a>
+                                  <?php $_category2 = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                                  <?php if($_category2->hasChildren()):?>
+                                  <?php $_subcategories2 = $_category2->getChildrenCategories() ?>
+                                      <ul>
+                                          <?php foreach($_subcategories2 as $_subcategory2): ?>
+                                              <li>
+                                                  <a href="<?php echo $_helper->getCategoryUrl($_subcategory2) ?>"><?php echo $_subcategory2->getName() ?></a>
+                                              </li>
+                                          <?php endforeach; ?>
+                                      </ul>
+                                  <?php endif; ?>
+
+                              </li>
+                          <?php endforeach; ?>
+                      </ul>
+                  <?php endif; ?>
+              </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>

@@ -90,7 +90,7 @@
           <?php if ($_product->getShortDescription()):?>
             <div class="short-description">
               <h2><?php echo $this->__('Quick Overview') ?></h2>
-              <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+              <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
             </div>
           <?php endif;?>
             <div class="row-product">
