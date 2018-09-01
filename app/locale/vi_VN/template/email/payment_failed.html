@@ -19,50 +19,50 @@ Use vars: {{var var_name}}
 <table>
     <thead>
         <tr>
-            <th>Payment transaction failed.</th>
+            <th>Thay toán không thành công.</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
                 <p>
-                    <b>Reason</b><br />
+                    <b>Nguyên nhân</b><br />
                     {{var reason}}
                 </p>
                 <p>
-                    <b>Checkout Type</b><br />
+                    <b>Loại thanh toán</b><br />
                     {{var checkoutType}}
                 </p>
                 <p>
-                    <b>Customer:</b><br />
+                    <b>Khách hàng:</b><br />
                     <a href="mailto:{{var customerEmail}}">{{var customer}}</a> &lt;{{var customerEmail}}&gt;
                 </p>
                 <p>
-                    <b>Items</b><br />
+                    <b>Mặt hàng</b><br />
                     {{var items}}
                 </p>
                 <p>
-                    <b>Total:</b><br />
+                    <b>Tổng cộng:</b><br />
                     {{var total}}
                 </p>
                 <p>
-                    <b>Billing Address:</b><br />
+                    <b>Địa chỉ hóa đơn:</b><br />
                     {{var billingAddress.format('html')}}
                 </p>
                 <p>
-                    <b>Shipping Address:</b><br />
+                    <b>Địa chỉ nhận hàng:</b><br />
                     {{var shippingAddress.format('html')}}
                 </p>
                 <p>
-                    <b>Shipping Method:</b><br />
+                    <b>Phương thức giao hàng:</b><br />
                     {{var shippingMethod}}
                 </p>
                 <p>
-                    <b>Payment Method:</b><br />
+                    <b>Phương thức thanh toán:</b><br />
                     {{var paymentMethod}}
                 </p>
                 <p>
-                    <b>Date & Time:</b><br />
+                    <b>Thời gian:</b><br />
                     {{var dateAndTime}}
                 </p>
             </td>
