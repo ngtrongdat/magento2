@@ -127,6 +127,12 @@ button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore
   }
 }
 
+.block .block-title{
+  font-family: $bookfont;
+  text-transform: uppercase;
+  border-bottom : 2px solid $red;
+}
+
 @media (max-width: 767px){
   .our-shops-container .groups .group .name {
       font-size: 14px;

@@ -47,7 +47,7 @@ class Inchoo_SocialConnect_Model_Facebook_Client
     protected $clientSecret = null;
     protected $redirectUri = null;
     protected $state = '';
-    protected $scope = array('email', 'user_birthday');
+    protected $scope = array('email');
 
     protected $token = null;
 
@@ -57,7 +57,7 @@ class Inchoo_SocialConnect_Model_Facebook_Client
             $this->clientId = $this->_getClientId();
             $this->clientSecret = $this->_getClientSecret();
             $this->redirectUri = Mage::getModel('core/url')->sessionUrlVar(
-                Mage::getUrl(self::REDIRECT_URI_ROUTE)
+                Mage::getUrl(self::REDIRECT_URI_ROUTE, array('_secure'=>true))
             );
 
             if(!empty($params['scope'])) {

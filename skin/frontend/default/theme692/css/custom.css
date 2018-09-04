@@ -110,6 +110,11 @@ button.button > span, .page-sitemap .links a, .but-link, .scrollpages a.loadmore
       font-size: 20px;
       margin-bottom: 20px; }
 
+.block .block-title {
+  font-family: SFUFuturaBook, "Open Sans", Arial;
+  text-transform: uppercase;
+  border-bottom: 2px solid #c51230; }
+
 @media (max-width: 767px) {
   .our-shops-container .groups .group .name {
     font-size: 14px; }
@@ -2075,3 +2080,57 @@ table {
 .block-progress dt {
   text-transform: uppercase;
   font-weight: normal; }
+
+.gcheckout-onepage-wrap .glc-title {
+  background-color: #c51230;
+  background-image: none; }
+
+.glc #gcheckout-onepage-review button.button span span {
+  background-color: #c51230;
+  background-image: none; }
+
+.opc .sp-methods dt {
+  padding-bottom: 0; }
+  .opc .sp-methods dt label {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold; }
+
+.opc .sp-methods dd {
+  margin-bottom: 15px;
+  position: relative;
+  min-height: 70px; }
+  .opc .sp-methods dd .form-list {
+    overflow: hidden; }
+    .opc .sp-methods dd .form-list .payment_ins {
+      float: left;
+      width: calc(100% - 140px); }
+    .opc .sp-methods dd .form-list img {
+      width: 140px;
+      position: absolute;
+      right: 0;
+      top: -40px; }
+  .opc .sp-methods dd #payment_form_cashondelivery {
+    display: block !important;
+    margin-top: 0; }
+    .opc .sp-methods dd #payment_form_cashondelivery .cashondelivery-instructions-content {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      height: auto;
+      padding-right: 140px; }
+      .opc .sp-methods dd #payment_form_cashondelivery .cashondelivery-instructions-content:after {
+        content: '';
+        width: 110px;
+        height: 80px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: -40px;
+        background-image: url(../images/icon-cod.png); }
+
+div.inchoo-socialconnect-account .col3-set [class^="col"],
+div.inchoo-socialconnect-account .col2-set [class^="col"] {
+  float: none;
+  width: 100%;
+  margin-bottom: 15px; }
