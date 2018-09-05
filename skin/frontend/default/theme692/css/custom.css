@@ -1893,6 +1893,23 @@ a.btn-google {
   object-fit: cover;
   display: block; }
 
+.product-gallery .slider-for {
+  margin-bottom: 20px; }
+  .product-gallery .slider-for img {
+    width: 100%; }
+
+.product-gallery .product-other-images {
+  position: relative; }
+  .product-gallery .product-other-images .slick-slide img {
+    margin: auto; }
+  .product-gallery .product-other-images .slick-arrow {
+    width: 40px;
+    height: 92px; }
+    .product-gallery .product-other-images .slick-arrow .slick-prev {
+      left: -10px; }
+    .product-gallery .product-other-images .slick-arrow .slick-next {
+      right: -10px; }
+
 .breadcrumbs {
   padding: 17px 0;
   background-color: #f5f5f5;

@@ -73,7 +73,7 @@ Default layout, loads most of the pages
                 <action method="addItem"><type>skin_js</type><name>js/TweenMax.min.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery.scrollmagic.min.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/smoothing-scroll.js</name><params/></action>
-                <action method="addItem"><type>skin_js</type><name>js/superfish.js</name><params/></action>
+                <!-- <action method="addItem"><type>skin_js</type><name>js/superfish.js</name><params/></action> -->
                 <action method="addItem"><type>skin_js</type><name>js/scripts.js</name><params/></action>
 
                 <!-- <action method="addItem"><type>skin_js</type><name>js/youama/ajaxlogin/jquery-ui-1-10-4.js</name><params/></action> -->
@@ -86,13 +86,15 @@ Default layout, loads most of the pages
                 <action method="addCss"><stylesheet>css/font-awesome.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/jquery.bxslider.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/photoswipe.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/slick.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/slick-theme.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/extra_style.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/camera.css</stylesheet></action>
                 <action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
-				<action method="addCss"><stylesheet>css/superfish.css</stylesheet></action>
+				<!-- <action method="addCss"><stylesheet>css/superfish.css</stylesheet></action> -->
                 <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
                 <action method="addCss"><stylesheet>css/custom.css</stylesheet></action>

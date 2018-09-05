@@ -528,6 +528,37 @@ jQuery(document).ready(function() {
 			var myPhotoSwipe = jQuery("#gallery-swipe a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false, captionAndToolbarAutoHideDelay:0 });
 		};
 
+		if(jQuery(".product-gallery").length){
+			jQuery('.slider-for').slick({
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  arrows: false,
+			  fade: true,
+			  asNavFor: '.slider-nav',
+				autoplay: false,
+				adaptiveHeight: true
+			});
+			jQuery('.slider-nav').slick({
+			  slidesToShow: 5,
+			  slidesToScroll: 1,
+			  asNavFor: '.slider-for',
+			  dots: false,
+			  centerMode: false,
+			  focusOnSelect: true,
+			  nextArrow: jQuery('.slick-next'),
+			  prevArrow: jQuery('.slick-prev'),
+			  responsive: [
+		    {
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 4
+		      }
+		    }
+		  ]
+
+			});
+		}
+
 	var parentTD;
     var newDiv;
     var navigationDiv;
