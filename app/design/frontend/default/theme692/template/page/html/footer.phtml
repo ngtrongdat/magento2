@@ -24,7 +24,7 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
+<?php $logoUrl = $this->getSkinUrl('images/logo_card.png');?>
 <?php echo $this->getChildHtml('aw_blog_footer') ?>
 <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
 	<?php echo $this->getChildHtml('tm_googlemap_embed') ?>
@@ -46,13 +46,22 @@
 						<?php // echo $this->getChildHtml('paypal.partner.right.logo'); ?>
 					  </div>
 					<div class="footer-shadow">
-						<address><?php echo $this->getCopyright() ?></address>
-						<div class="clear"></div>
-							<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
-								if ($current_page == 'cms'):
-									echo '<!--{%FOOTER_LINK}-->';
-								endif;
-							?>
+						<div class="row">
+							<div class="col-md-6 col-copyright">
+								<address><?php echo $this->getCopyright() ?></address>
+							</div>
+							<div class="col-md-6 col-payment">
+								<a href="http://202.9.84.88/documents/payment/guideVN.jsp?logos=v,m,at" target="_blank">
+									<img src="<?php echo $logoUrl;?>" style="height: 20px"/>
+								</a>
+								<div class="clear"></div>
+									<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
+										if ($current_page == 'cms'):
+											echo '<!--{%FOOTER_LINK}-->';
+										endif;
+									?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

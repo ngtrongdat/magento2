@@ -179,7 +179,7 @@
 "One item of products do not have identifier or sku","Một sản phẩm không có định danh hoặc mã SKU"
 "One item of products is not belong any of quote item","One item of products is not belong any of quote item"
 "Order #","Đơn hàng số: "
-"Order Review","Xem đơn hàng"
+"Order Review","Tổng quan đơn hàng"
 "Order Success","Đặt hàng thành công"
 "Order place error.","Nơi đặt hàng bị lỗi
 "Other Items in Your Order","Sản phẩm khác trong hóa đơn của bạn"
@@ -336,3 +336,4 @@
 "Fixed", "Giá cố định"
 "Check / Money order", "Thanh toán khi nhận hàng"
 "Credit Card (saved)", "Thẻ tín dụng"
+"Transaction Success", "Thanh toán thành công"

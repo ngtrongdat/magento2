@@ -28,3 +28,22 @@
 .footer .block-subscribe button.button > span{
 	background: $red;
 }
+
+.footer address{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.col-payment{
+	text-align: right;
+}
+
+@media (max-width: 768px){
+	.col-copyright, .col-payment{
+		text-align: center;
+	}
+	.footer address{
+		float: none;
+		margin-bottom: 10px;
+	}
+}
