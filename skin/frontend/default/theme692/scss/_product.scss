@@ -524,6 +524,22 @@
   display: block;
 }
 
+.products-list .product-image img{
+  height: 125px;
+}
+
+@media (max-width: 767px){
+  .products-grid .product-image img{
+    height: 140px;
+  }
+  .products-list .product-image img{
+    height: 140px;
+  }
+  .products-grid li.item .wrapper-hover{
+    margin-bottom: 15px;
+  }
+}
+
 .product-gallery{
   .slider-for{
     margin-bottom: 20px;

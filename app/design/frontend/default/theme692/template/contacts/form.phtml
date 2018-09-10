@@ -28,7 +28,6 @@
 <div class="page-title">
     <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
 </div>
-<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('tm/googlemap/contacts_map.phtml')->toHtml(); ?>
 <div class="contact-block clearfix">
 	<div class="contact-left"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact_block')->toHtml() ?></div>
 	<form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">

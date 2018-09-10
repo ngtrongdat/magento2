@@ -129,7 +129,7 @@
 	.page-title h2 { word-wrap:break-word;}
 	.page-title h1, .page-title h2 {font-size: 30px;}
 
-	button.button > span, .page-sitemap .links a {font-size: 10px;}
+	button.button > span, .page-sitemap .links a, .product-shop .actions .btn-wishlist {font-size: 10px;}
 	button.button span span {}
 	button.btn-row > span {font-size: 18px;}
 	
@@ -670,7 +670,7 @@
 @media only screen and (max-width: 600px) {
 	.footer .footer-col .tel {font-size: 22px;}
 	button.button > span, .page-sitemap .links a,
-	.add-to-cart button.button > span {font-size: 12px;}
+	.add-to-cart button.button > span, .product-shop .actions .btn-wishlist {font-size: 12px;}
 	.products-grid button.btn-cart > span {font-size: 13px; line-height: 20px;}
 	.products-grid button.btn-cart span span:before {font-size: 18px; margin-right: 8px;}
 	.homeIndent .category-title {padding-right: 85px;}
