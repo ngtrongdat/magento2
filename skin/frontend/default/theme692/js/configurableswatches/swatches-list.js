@@ -29,9 +29,9 @@ var ConfigurableSwatchesList = {
     init: function()
     {
         var that = this;
-        $j('.configurable-swatch-list li').each(function() {
+        jQuery('.configurable-swatch-list li').each(function() {
             that.initSwatch(this);
-            var $swatch = $j(this);
+            var $swatch = jQuery(this);
             if ($swatch.hasClass('filter-match')) {
                 that.handleSwatchSelect($swatch);
             }
@@ -41,7 +41,7 @@ var ConfigurableSwatchesList = {
     initSwatch: function(swatch)
     {
         var that = this;
-        var $swatch = $j(swatch);
+        var $swatch = jQuery(swatch);
         var productId;
         if (productId = $swatch.data('product-id')) {
             if (typeof(this.swatchesByProduct[productId]) == 'undefined') {
@@ -64,7 +64,7 @@ var ConfigurableSwatchesList = {
             ConfigurableMediaImages.swapListImageByOption(productId, label);
         }
 
-        $j.each(this.swatchesByProduct[productId], function(key, $productSwatch) {
+        jQuery.each(this.swatchesByProduct[productId], function(key, $productSwatch) {
             $productSwatch.removeClass('selected');
         });
 
@@ -72,6 +72,6 @@ var ConfigurableSwatchesList = {
     }
 }
 
-$j(document).on('configurable-media-images-init', function(){
+jQuery(document).on('configurable-media-images-init', function(){
     ConfigurableSwatchesList.init();
 });

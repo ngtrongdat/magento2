@@ -101,7 +101,7 @@ var ConfigurableMediaImages = {
         }
 
         //second, get any product which is compatible with currently selected option(s)
-        $j.each(fallback['option_labels'], function(key, value) {
+        jQuery.each(fallback['option_labels'], function(key, value) {
             var image = value['configurable_product'][ConfigurableMediaImages.imageType];
             var products = value['products'];
 
@@ -139,7 +139,7 @@ var ConfigurableMediaImages = {
     getImageObject: function(productId, imageUrl) {
         var key = productId+'-'+imageUrl;
         if(!ConfigurableMediaImages.imageObjects[key]) {
-            var image = $j('<img />');
+            var image = jQuery('<img />');
             image.attr('src', imageUrl);
             ConfigurableMediaImages.imageObjects[key] = image;
         }
@@ -147,15 +147,15 @@ var ConfigurableMediaImages = {
     },
 
     updateImage: function(el) {
-        var select = $j(el);
+        var select = jQuery(el);
         var label = select.find('option:selected').attr('data-label');
         var productId = optionsPrice.productId; //get product ID from options price object
 
         //find all selected labels
         var selectedLabels = new Array();
 
-        $j('.product-options .super-attribute-select').each(function() {
-            var $option = $j(this);
+        jQuery('.product-options .super-attribute-select').each(function() {
+            var $option = jQuery(this);
             if($option.val() != '') {
                 selectedLabels.push($option.find('option:selected').attr('data-label'));
             }
@@ -172,19 +172,19 @@ var ConfigurableMediaImages = {
     },
 
     wireOptions: function() {
-        $j('.product-options .super-attribute-select').change(function(e) {
+        jQuery('.product-options .super-attribute-select').change(function(e) {
             ConfigurableMediaImages.updateImage(this);
         });
     },
 
     swapListImage: function(productId, imageObject) {
-        var originalImage = $j('#product-collection-image-' + productId);
+        var originalImage = jQuery('#product-collection-image-' + productId);
 
         if(imageObject[0].complete) { //swap image immediately
 
             //remove old image
             originalImage.addClass('hidden');
-            $j('.product-collection-image-' + productId).remove();
+            jQuery('.product-collection-image-' + productId).remove();
 
             //add new image
             imageObject.insertAfter(originalImage);
@@ -203,7 +203,7 @@ var ConfigurableMediaImages = {
 
                 //remove old image
                 originalImage.addClass('hidden');
-                $j('.product-collection-image-' + productId).remove();
+                jQuery('.product-collection-image-' + productId).remove();
 
                 //add new image
                 imageObject.insertAfter(originalImage);

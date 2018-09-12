@@ -564,3 +564,25 @@
     }
   }
 }
+
+.configurable-swatch-list{
+  &>li{
+    display: inline-block;
+    margin-right: 7px;
+    a{
+      display: block;
+      border: 1px solid transparent;
+      span.swatch-label{
+        display: block;
+      }
+    }
+    &.selected{
+      a{
+        border: 1px solid #333;
+      }
+    }
+    .x{
+      display: none;
+    }
+  }
+}

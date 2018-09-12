@@ -39,7 +39,7 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view" itemscope itemtype="http://schema.org/Product">
     <div class="product-essential">
-    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+    <form action="<?php echo $this->getSubmitUrl($_product, array("_secure" => true)) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
         <div class="no-display">
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
@@ -93,19 +93,11 @@
               <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
             </div>
           <?php endif;?>
-            <div class="row-product">
-<!--                --><?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                
-<!--                --><?php //if ($this->canEmailToFriend()): ?>
-<!--                    <p class="email-friend"><a href="--><?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?><!--">--><?php //echo $this->__('Email to a Friend') ?><!--</a></p>-->
-<!--                --><?php //endif; ?>
-            </div>
-
-        </div>
         <div class="clearer"></div>
         <?php if ($_product->isSaleable() && $this->hasOptions()):?>
             <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
         <?php endif;?>
+        </div>
     </form>
     <script type="text/javascript">
     //<![CDATA[

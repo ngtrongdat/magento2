@@ -1935,6 +1935,19 @@ a.btn-google {
     .product-gallery .product-other-images .slick-arrow .slick-next {
       right: -10px; }
 
+.configurable-swatch-list > li {
+  display: inline-block;
+  margin-right: 7px; }
+  .configurable-swatch-list > li a {
+    display: block;
+    border: 1px solid transparent; }
+    .configurable-swatch-list > li a span.swatch-label {
+      display: block; }
+  .configurable-swatch-list > li.selected a {
+    border: 1px solid #333; }
+  .configurable-swatch-list > li .x {
+    display: none; }
+
 .breadcrumbs {
   padding: 17px 0;
   background-color: #f5f5f5;

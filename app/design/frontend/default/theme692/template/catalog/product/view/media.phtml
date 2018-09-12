@@ -37,23 +37,29 @@
 ?>
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="product-gallery">
-    <div class="slider-for">
+    <div class="slider-for product-image-gallery">
         <?php foreach ($this->getGalleryImages() as $_image): ?>
-            <div class="item">
-                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile()); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
-            </div>
+            <?php if ($this->isGalleryImageVisible($_image)): ?>
+                <div class="item">
+                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile()); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+                </div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
-    <div class="product-other-images">
+    <div class="product-other-images product-image-thumbs">
         <img class="slick-prev slick-arrow" src="<?php echo $this->getSkinUrl('images/xs-left.svg');?>">
         <div class="slider-nav">
             <?php foreach ($this->getGalleryImages() as $_image): ?>
-                <div class="item">
-                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(70); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
-                </div>
+                <?php if ($this->isGalleryImageVisible($_image)): ?>
+                    <div class="item">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(70); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+                    </div>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
         <img class="slick-next slick-arrow" src="<?php echo $this->getSkinUrl('images/xs-right.svg');?>">
     </div>
 </div>
 <?php endif; ?>
+
+<?php echo $this->getChildHtml('after'); ?>

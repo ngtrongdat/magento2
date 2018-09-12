@@ -480,7 +480,7 @@ Product.ConfigurableSwatches.prototype = {
         // Since browsers like Safari on iOS will emulate a hover event, use custom event detection to determine
         // whether if input is touch. If event *is* touch, then don't run this code so that the onOptionClick
         // method will be triggered.
-        if(PointerManager.getPointer() == PointerManager.TOUCH_POINTER_TYPE) {
+        if(typeof PointerManager != "undefined" && PointerManager.getPointer() == PointerManager.TOUCH_POINTER_TYPE) {
             return;
         }
 
@@ -537,7 +537,7 @@ Product.ConfigurableSwatches.prototype = {
         // Since browsers like Safari on iOS will emulate a hover event, use custom event detection to determine
         // whether if input is touch. If event *is* touch, then don't run this code so that the onOptionClick
         // method will be triggered.
-        if (PointerManager.getPointer() == PointerManager.TOUCH_POINTER_TYPE) {
+        if (typeof PointerManager != "undefined" && PointerManager.getPointer() == PointerManager.TOUCH_POINTER_TYPE) {
             return;
         }
 

@@ -167,6 +167,7 @@ Compare products page
         <reference name="head">
             <action method="addJs"><script>scriptaculous/scriptaculous.js</script></action>
             <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
         </reference>
         <reference name="content">
             <block type="catalog/product_compare_list" name="catalog.compare.list" template="catalog/product/compare/list.phtml"/>
@@ -197,6 +198,7 @@ Product view
             <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
         </reference>
         <reference name="content">
             <!--<remove name="product_type_data_extra" />-->
@@ -206,7 +208,9 @@ Product view
                 <action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short.phtml</template></action>
                 <action method="addReviewSummaryTemplate"><type>...</type><template>...</template></action>
                 -->
-                <block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml"/>
+                <block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml">
+                    <block type="core/text_list" name="product.info.media.after" as="after" />
+                </block>
                 <block type="core/text_list" name="alert.urls" as="alert_urls" translate="label">
                     <label>Alert Urls</label>
                 </block>
@@ -257,8 +261,6 @@ Product view
 				</block>
                 <block type="catalog/product_view" name="product.info.options.wrapper.bottom" as="product_options_wrapper_bottom" template="catalog/product/view/options/wrapper/bottom.phtml" translate="label">
                     <label>Bottom Block Options Wrapper</label>
-                    <action method="insert"><block>product.tierprices</block></action>
-                    <block type="catalog/product_view" name="product.clone_prices" as="prices" template="catalog/product/view/price_clone.phtml"/>
                     <action method="append"><block>product.info.addtocart</block></action>
                     <action method="append"><block>product.info.addto</block></action>
                 </block>
@@ -318,7 +320,10 @@ Additional block dependant on product type
             </block>
         </reference>
         <reference name="product.info.options.wrapper">
-            <block type="catalog/product_view_type_configurable" name="product.info.options.configurable" as="options_configurable" before="-" template="catalog/product/view/type/options/configurable.phtml"/>
+            <block type="catalog/product_view_type_configurable" name="product.info.options.configurable" as="options_configurable" before="-" template="catalog/product/view/type/options/configurable.phtml">
+                <block type="core/text_list" name="product.info.options.configurable.renderers" as="attr_renderers" />
+                <block type="core/text_list" name="product.info.options.configurable.after" as="after" />
+            </block>
         </reference>
     </PRODUCT_TYPE_configurable>
     <PRODUCT_TYPE_grouped translate="label" module="catalog">
@@ -356,6 +361,7 @@ Product send to friend
         </reference>
         <reference name="head">
             <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
         </reference>
         <reference name="content">
             <block type="catalog/product_send" name="product.send" template="catalog/product/send.phtml">
