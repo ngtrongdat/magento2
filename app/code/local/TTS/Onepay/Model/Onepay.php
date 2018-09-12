@@ -99,49 +99,49 @@ class TTS_Onepay_Model_Onepay extends Mage_Payment_Model_Method_Abstract
 				//$result = "Giao dịch thành công - Approved";
 				break;
 			case "1" :
-				$result = "Bank Declined";
+				$result = "Ngân hàng từ chối";
 				break;
 			case "3" :
-				$result = "Merchant not exist";
+				$result = "Merchant không tồn tại";
 				break;
 			case "4" :
-				$result = "Invalid access code";
+				$result = "Mã truy cập không đúng";
 				break;
 			case "5" :
-				$result = "Invalid amount";
+				$result = "Số tiền không hợp lệ";
 				break;
 			case "6" :
-				$result = "Invalid currency code";
+				$result = "Mã tiền tệ không hợp lệ";
 				break;
 			case "7" :
-				$result = "Unspecified Failure ";
+				$result = "Lỗi chưa xác định";
 				break;
 			case "8" :
-				$result = "Invalid card Number";
+				$result = "Số thẻ không đúng";
 				break;
 			case "9" :
-				$result = "Invalid card name";
+				$result = "Tên trên thẻ không đúng";
 				break;
 			case "10" :
-				$result = "Expired Card";
+				$result = "Thẻ hết hạn";
 				break;
 			case "11" :
-				$result = "Card Not Registed Service(internet banking)";
+				$result = "Thẻ chưa được đăng ký dịch vụ ngân hàng trực tuyến";
 				break;
 			case "12" :
-				$result = "Invalid card date";
+				$result = "Ngày trên thẻ không đúng";
 				break;
 			case "13" :
 				$result = "Exist Amount";
 				break;
 			case "21" :
-				$result = "Insufficient fund";
+				$result = "Không đủ hạn mức";
 				break;
 			case "25" :
-				$result = "Wrong OTP";
+				$result = "Sai OTP";
 				break;
 			case "99" :
-				$result = "User cancel";
+				$result = "Khách hàng hủy";
 				break;
 			default :
 				//$result = "Failured";
@@ -151,11 +151,11 @@ class TTS_Onepay_Model_Onepay extends Mage_Payment_Model_Method_Abstract
 	public function transStatus($hashValidated,$txnResponseCode){
 	$transStatus = "";
 	if($hashValidated=="CORRECT" && $txnResponseCode=="0"){
-		$transStatus = "Transaction Success";
+		$transStatus = "Giao dịch thành công";
 	}elseif ($hashValidated=="CORRECT" && $txnResponseCode!="0"){
-		$transStatus = "Transaction Fail </br>".$this->getResponseDescription($txnResponseCode);
+		$transStatus = "Giao dịch lỗi </br>".$this->getResponseDescription($txnResponseCode);
 	}elseif ($hashValidated=="INVALID HASH"){
-		$transStatus = "Transaction Pendding";
+		$transStatus = "Giao dịch đang chờ";
 	}
 	return $transStatus;
 	}

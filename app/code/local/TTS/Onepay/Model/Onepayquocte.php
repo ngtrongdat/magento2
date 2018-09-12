@@ -97,85 +97,85 @@ class TTS_Onepay_Model_Onepayquocte extends Mage_Payment_Model_Method_Abstract
 	
 		  switch ($responseCode) {
         case "0" :
-            $result = "Transaction Successful";
+            $result = "Giao dịch thành công";
             break;
         case "?" :
-            $result = "Transaction status is unknown";
+            $result = "Không xác định được trạng thái giao dịch";
             break;
         case "1" :
-            $result = "Bank system reject";
+            $result = "Hệ thống của ngân hàng từ chối";
             break;
         case "2" :
-            $result = "Bank Declined Transaction";
+            $result = "Ngân hàng từ chối giao dịch";
             break;
         case "3" :
-            $result = "No Reply from Bank";
+            $result = "Ngân hàng không phản hồi";
             break;
         case "4" :
-            $result = "Expired Card";
+            $result = "Thẻ hết hạn";
             break;
         case "5" :
-            $result = "Insufficient funds";
+            $result = "Không đủ hạn mức để thanh toán";
             break;
         case "6" :
-            $result = "Error Communicating with Bank";
+            $result = "Không kết nối được với ngân hàng";
             break;
         case "7" :
-            $result = "Payment Server System Error";
+            $result = "Hệ thống thanh toán lỗi";
             break;
         case "8" :
-            $result = "Transaction Type Not Supported";
+            $result = "Không hỗ trợ kiểu giao dịch này";
             break;
         case "9" :
-            $result = "Bank declined transaction (Do not contact Bank)";
+            $result = "Ngân hàng từ chối giao dịch (Không liên hẹe ngân hàng)";
             break;
 		case "99" :
-            $result = "User cancel";
+            $result = "Khách hàng hủy";
             break;
         case "A" :
-            $result = "Transaction Aborted";
+            $result = "Giao dịch bị ngưng";
             break;
         case "C" :
-            $result = "Transaction Cancelled";
+            $result = "Đã hủy giao dịch";
             break;
         case "D" :
-            $result = "Deferred transaction has been received and is awaiting processing";
+            $result = "Giao dịch đã nhận và đang được xử lý";
             break;
         case "F" :
-            $result = "3D Secure Authentication failed";
+            $result = "Xác thực 3D Secure lỗi";
             break;
 		case "B" :
-            $result = "3D Secure Authentication failed";
+            $result = "Xác thực 3D Secure lỗi";
             break;
         case "I" :
-            $result = "Card Security Code verification failed";
+            $result = "Xác thực mã bảo mật của thẻ lỗi";
             break;
         case "L" :
-            $result = "Shopping Transaction Locked (Please try the transaction again later)";
+            $result = "Giao dịch đang bị khóa";
             break;
         case "N" :
-            $result = "Cardholder is not enrolled in Authentication scheme";
+            $result = "Chủ thẻ chưa bật xác thực thẻ";
             break;
         case "P" :
-            $result = "Transaction has been received by the Payment Adaptor and is being processed";
+            $result = "Giao dịch đã nhận và đang được xử lý";
             break;
         case "R" :
-            $result = "Transaction was not processed - Reached limit of retry attempts allowed";
+            $result = "Giao dịch chưa được xử lý - vượt quá giới hạn hoặc số lần thử";
             break;
         case "S" :
-            $result = "Duplicate SessionID (OrderInfo)";
+            $result = "Lặp SessionID";
             break;
         case "T" :
-            $result = "Address Verification Failed";
+            $result = "Xác thực địa chỉ lỗi";
             break;
         case "U" :
-            $result = "Card Security Code Failed";
+            $result = "Mã bảo mật lỗi";
             break;
         case "V" :
-            $result = "Address Verification and Card Security Code Failed";
+            $result = "Xác thực địa chỉ và mã bảo mật lỗi";
             break;
 		case "Z" :
-            $result = "Transaction was block by OnePAY ODF";
+            $result = "Giao dịch bị chặn bởi OnePAY ODF";
             break;
         default  :
             //$result = "Unable to be determined";
@@ -186,11 +186,11 @@ class TTS_Onepay_Model_Onepayquocte extends Mage_Payment_Model_Method_Abstract
 	public function transStatus($hashValidated,$txnResponseCode){
 	$transStatus = "";
 	if($hashValidated=="CORRECT" && $txnResponseCode=="0"){
-		$transStatus = "Transaction Success";
+		$transStatus = "Giao dịch thành công";
 	}elseif ($hashValidated=="CORRECT" && $txnResponseCode!="0"){
-		$transStatus = "Transaction Fail </br>".$this->getResponseDescription($txnResponseCode);
+		$transStatus = "Giao dịch lỗi </br>".$this->getResponseDescription($txnResponseCode);
 	}elseif ($hashValidated=="INVALID HASH"){
-		$transStatus = "Transaction Pendding";
+		$transStatus = "Giao dịch đang chờ";
 	}
 	return $transStatus;
 	}
