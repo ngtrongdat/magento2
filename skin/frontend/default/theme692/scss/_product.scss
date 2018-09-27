@@ -586,3 +586,11 @@
     }
   }
 }
+
+.wrapper-hover:hover .product-image{
+  box-shadow: none!important;
+}
+
+.product-image{
+  background: transparent;
+}

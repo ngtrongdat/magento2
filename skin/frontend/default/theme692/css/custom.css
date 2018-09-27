@@ -931,6 +931,9 @@ All this is done for any sub-level being entered.
 .logo img {
   max-height: 80px; }
 
+.swipe-menu ul li a:hover {
+  background: rgba(255, 248, 213, 0.1); }
+
 .swipe {
   display: none;
   z-index: 99;
@@ -961,7 +964,7 @@ All this is done for any sub-level being entered.
   .sf-menu-phone {
     top: 50px; } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .stock-region {
     min-width: 0;
     padding: 0;
@@ -1036,13 +1039,18 @@ body.ind .swipe {
   width: 100%;
   z-index: 99999;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 0;
+  min-height: 100vh; }
   body.ind .swipe .swipe-menu {
     border-top: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     max-width: 380px;
     background-color: #fff; }
+    @media (max-width: 480px) {
+      body.ind .swipe .swipe-menu {
+        padding-bottom: 70px; } }
     body.ind .swipe .swipe-menu .menu-header {
       margin: 0;
       padding: 20px 10px;
@@ -1947,6 +1955,12 @@ a.btn-google {
     border: 1px solid #333; }
   .configurable-swatch-list > li .x {
     display: none; }
+
+.wrapper-hover:hover .product-image {
+  box-shadow: none !important; }
+
+.product-image {
+  background: transparent; }
 
 .breadcrumbs {
   padding: 17px 0;

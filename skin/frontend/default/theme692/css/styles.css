@@ -2996,7 +2996,6 @@ body.ind .swipe { left: 0; }
     height: 100%;
     overflow: scroll;
     border-top: 1px solid #232323;
-    -webkit-overflow-scrolling: touch;
 }
 body.ind div.shadow {
     width: 100%;
