@@ -30,7 +30,7 @@
 </div>
 <div class="contact-block clearfix">
 	<div class="contact-left"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact_block')->toHtml() ?></div>
-	<form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
+	<form action="<?php echo Mage::getUrl('contacts/index/post', array('_secure' => $this->getRequest()->isSecure())); ?>" id="contactForm" method="post">
 		<div class="fieldset">
 			<h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
 			<ul class="form-list">

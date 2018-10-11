@@ -120,11 +120,17 @@
 
 .happy-furniture-to-you .row {
   margin-bottom: 30px;
+  @media (max-width: 767px){
+    margin-bottom: 20px;
+  }
   .wrapper{
   	width: inherit;
   }
 }
 
+.mb-lg{
+  margin-bottom: 20px;
+}
 
 .page-title {
   color: #171717;
@@ -154,6 +160,9 @@
   }
 	.row{
 		margin-bottom: 30px;
+    @media (max-width: 767px){
+      margin-bottom: 20px;
+    }
 	  a {
 	    display: block;
 	    position: relative;

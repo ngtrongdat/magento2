@@ -1349,8 +1349,14 @@ body.ind .swipe {
 
 .happy-furniture-to-you .row {
   margin-bottom: 30px; }
+  @media (max-width: 767px) {
+    .happy-furniture-to-you .row {
+      margin-bottom: 20px; } }
   .happy-furniture-to-you .row .wrapper {
     width: inherit; }
+
+.mb-lg {
+  margin-bottom: 20px; }
 
 .page-title {
   color: #171717;
@@ -1376,6 +1382,9 @@ body.ind .swipe {
 
 .featured-categories .row {
   margin-bottom: 30px; }
+  @media (max-width: 767px) {
+    .featured-categories .row {
+      margin-bottom: 20px; } }
   .featured-categories .row a {
     display: block;
     position: relative;
@@ -1679,7 +1688,7 @@ a.btn-google {
     .product-view .product-shop .add-to-box .add-to-wishlist {
       float: left; }
     .product-view .product-shop .add-to-box > .add-to-cart-button {
-      width: 60%;
+      width: 59%;
       order: 3; }
       .product-view .product-shop .add-to-box > .add-to-cart-button .btn-cart {
         width: 100%;
