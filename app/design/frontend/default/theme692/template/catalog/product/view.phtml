@@ -67,8 +67,17 @@
 
             <?php if (!$this->hasOptions()):?>
                 <div class="add-to-box">
+                    <?php $_finalPrice = $_product->getFinalPrice();?>
                     <?php if($_product->isSaleable()): ?>
-                        <?php echo $this->getChildHtml('addtocart') ?>
+                        <?php if ($_finalPrice != 0): ?>
+                            <?php echo $this->getChildHtml('addtocart') ?>
+                        <?php else : ?>
+                            <div class="add-to-cart-button">
+                                <button type="button" title="Mua hàng" class="button btn-cart" onclick="setLocation('<?php echo $this->getUrl('lien-he') ?>')"><span><span>
+                                    <?php echo $this->__('Contact for price'); ?>
+                                </span></span></button>
+                            </div>
+                        <?php endif; ?>
                         <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
                             <span class="or"><?php echo $this->__('OR') ?></span>
                         <?php endif; ?>

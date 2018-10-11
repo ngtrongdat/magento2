@@ -205,7 +205,9 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 </span>
             <?php else: ?>
                 <span class="regular-price" itemprop="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
-                    <?php if ($_finalPrice == $_price): ?>
+                    <?php if ($_finalPrice == 0): ?>
+                        <?php echo '<span class="price contact-price">'.$this->__('Contact for price').'</span>';?>
+                    <?php elseif ($_finalPrice == $_price): ?>
                         <?php echo $_coreHelper->formatPrice($_price, true) ?>
                     <?php else: ?>
                         <?php echo $_coreHelper->formatPrice($_finalPrice, true) ?>

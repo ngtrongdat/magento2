@@ -240,7 +240,7 @@
         }
       }
       > .add-to-wishlist {
-        width: 40%;
+        width: 39.5%;
         order: 2;
         .link-wishlist {
           display: block;
@@ -593,4 +593,8 @@
 
 .product-image{
   background: transparent;
+}
+
+.price-box .price.contact-price{
+  font-weight: normal;
 }

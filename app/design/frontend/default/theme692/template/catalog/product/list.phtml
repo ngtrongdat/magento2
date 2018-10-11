@@ -66,12 +66,15 @@
                         </div>
                     </div>
                     <div class="list-right">
+                        <?php $_finalPrice = $_product->getFinalPrice();?>
     					<?php echo $this->getPriceHtml($_product, true) ?>
                         <?php if($_product->getRatingSummary()): ?>
     						<?php echo $this->getReviewsSummaryHtml($_product) ?>
                         <?php endif; ?>
-                        <?php if($_product->isSaleable()): ?>
+                        <?php if($_product->isSaleable() && $_finalPrice!=0): ?>
                             <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php elseif ($_finalPrice==0): ?>
+                                <button type="button" title="<?php echo $this->__('Contact for price') ?>" class="button noSwipe btn-buy" onclick="setLocation('<?php echo $this->getUrl('lien-he') ?>')"><span><span><?php echo $this->__('Contact for price') ?></span></span></button>
                         <?php else: ?>
                             <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
@@ -129,9 +132,13 @@
                         <?php endif; ?>
 
                         <div class="actions">
+
+                            <?php $_finalPrice = $_product->getFinalPrice();?>
                             <a title="<?php echo $this->__('Add to Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" rel="tooltip" class="link-wishlist button btn-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
-                            <?php if($_product->isSaleable()): ?>
+                            <?php if($_product->isSaleable() && $_finalPrice!=0): ?>
                                 <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button noSwipe btn-buy" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php elseif ($_finalPrice==0): ?>
+                                <button type="button" title="<?php echo $this->__('Contact for price') ?>" class="button noSwipe btn-buy" onclick="setLocation('<?php echo $this->getUrl('lien-he') ?>')"><span><span><?php echo $this->__('Contact for price') ?></span></span></button>
                             <?php else: ?>
                                 <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                             <?php endif; ?>

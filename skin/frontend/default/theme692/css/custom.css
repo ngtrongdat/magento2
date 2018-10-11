@@ -931,9 +931,6 @@ All this is done for any sub-level being entered.
 .logo img {
   max-height: 80px; }
 
-.swipe-menu ul li a:hover {
-  background: rgba(255, 248, 213, 0.1); }
-
 .swipe {
   display: none;
   z-index: 99;
@@ -964,7 +961,7 @@ All this is done for any sub-level being entered.
   .sf-menu-phone {
     top: 50px; } }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .stock-region {
     min-width: 0;
     padding: 0;
@@ -1039,18 +1036,13 @@ body.ind .swipe {
   width: 100%;
   z-index: 99999;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 0;
-  min-height: 100vh; }
+  background-color: rgba(0, 0, 0, 0.5); }
   body.ind .swipe .swipe-menu {
     border-top: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     max-width: 380px;
     background-color: #fff; }
-    @media (max-width: 480px) {
-      body.ind .swipe .swipe-menu {
-        padding-bottom: 70px; } }
     body.ind .swipe .swipe-menu .menu-header {
       margin: 0;
       padding: 20px 10px;
@@ -1349,14 +1341,8 @@ body.ind .swipe {
 
 .happy-furniture-to-you .row {
   margin-bottom: 30px; }
-  @media (max-width: 767px) {
-    .happy-furniture-to-you .row {
-      margin-bottom: 20px; } }
   .happy-furniture-to-you .row .wrapper {
     width: inherit; }
-
-.mb-lg {
-  margin-bottom: 20px; }
 
 .page-title {
   color: #171717;
@@ -1382,9 +1368,6 @@ body.ind .swipe {
 
 .featured-categories .row {
   margin-bottom: 30px; }
-  @media (max-width: 767px) {
-    .featured-categories .row {
-      margin-bottom: 20px; } }
   .featured-categories .row a {
     display: block;
     position: relative;
@@ -1688,7 +1671,7 @@ a.btn-google {
     .product-view .product-shop .add-to-box .add-to-wishlist {
       float: left; }
     .product-view .product-shop .add-to-box > .add-to-cart-button {
-      width: 59%;
+      width: 60%;
       order: 3; }
       .product-view .product-shop .add-to-box > .add-to-cart-button .btn-cart {
         width: 100%;
@@ -1703,7 +1686,7 @@ a.btn-google {
           text-transform: uppercase;
           font-size: 1.4em; }
     .product-view .product-shop .add-to-box > .add-to-wishlist {
-      width: 40%;
+      width: 39.5%;
       order: 2; }
       .product-view .product-shop .add-to-box > .add-to-wishlist .link-wishlist {
         display: block;
@@ -1965,11 +1948,8 @@ a.btn-google {
   .configurable-swatch-list > li .x {
     display: none; }
 
-.wrapper-hover:hover .product-image {
-  box-shadow: none !important; }
-
-.product-image {
-  background: transparent; }
+.price-box .price.contact-price {
+  font-weight: normal; }
 
 .breadcrumbs {
   padding: 17px 0;
